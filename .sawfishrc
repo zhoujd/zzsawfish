@@ -5,7 +5,7 @@
 (setq zzsawfish-path "~/zzsawfish/")
 
 ;;add load-path
-(setq load-path (cons zzsawfish-path load-path))
+(setq load-path (cons (concat zzsawfish-path "lisp") load-path))
 
 ;;font set
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
@@ -14,7 +14,7 @@
 (setq default-frame-style 'microGUI)
 
 ;;set backgound
-(system (concat "xloadimage -onroot -fullscreen " zzsawfish-path "background.jpg &"))
+;(system (concat "xloadimage -onroot -fullscreen " zzsawfish-path "background.jpg &"))
 
 ;;capture screen
 (defun capture-root-window ()  
