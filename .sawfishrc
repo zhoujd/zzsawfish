@@ -44,7 +44,7 @@
   '(("gnome-panel")
     ("nm-applet")
     ("xscreensaver" "-no-splash")
-    ("habak" "-ms ../warty-final-ubuntu.png")
+    ("habak-amd64" "-ms ../warty-final-ubuntu.png")
     ))
 
 (add-hook 'before-exit-hook  
