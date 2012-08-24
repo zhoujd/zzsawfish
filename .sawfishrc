@@ -7,14 +7,14 @@
 ;;add load-path
 (setq load-path (cons (concat zzsawfish-path "lisp") load-path))
 
+
+(setenv "PATH" (concat zzsawfish-path "bin:" (getenv "PATH")))
+
 ;;font set
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
 
 ;;set frame default style
 (setq default-frame-style 'microGUI)
-
-;;set backgound
-;(system (concat "xloadimage -onroot -fullscreen " zzsawfish-path "background.jpg &"))
 
 ;;capture screen
 (defun capture-root-window ()  
@@ -44,6 +44,7 @@
   '(("gnome-panel")
     ("nm-applet")
     ("xscreensaver" "-no-splash")
+    ("habak" "-ms ../warty-final-ubuntu.png")
     ))
 
 (add-hook 'before-exit-hook  
@@ -111,6 +112,12 @@
 
 (bind-keys root-window-keymap "button3-click1" '(popup-root-menu))
 (bind-keys window-keymap      "Meta-F10"       'maximize-window-fullscreen-toggle)
+
+(bind-keys global-keymap "Super-TAB"   '(cycle-windows))  
+(bind-keys global-keymap "Super-Right" '(next-workspace))
+(bind-keys global-keymap "Super-Left"  '(previous-workspace))
+(bind-keys global-keymap "Super-Down"  '(lower-window))
+(bind-keys global-keymap "Super-Up"    '(raise-window))
 
 ;;window manage
 (bind-keys global-keymap "Super-F1"  '(popup-root-menu))  
