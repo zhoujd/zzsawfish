@@ -7,14 +7,14 @@
 ;;add load-path
 (setq load-path (cons (concat zzsawfish-path "lisp") load-path))
 
-
-(setenv "PATH" (concat zzsawfish-path "bin:" (getenv "PATH")))
-
 ;;font set
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
 
 ;;set frame default style
 (setq default-frame-style 'microGUI)
+
+;;set backgound
+(system (concat zzsawfish-path "/bin/habak-amd64 -ms " zzsawfish-path "ubuntu-boot.png &"))
 
 ;;capture screen
 (defun capture-root-window ()  
@@ -44,7 +44,6 @@
   '(("gnome-panel")
     ("nm-applet")
     ("xscreensaver" "-no-splash")
-    ("habak-amd64" "-ms ../warty-final-ubuntu.png")
     ))
 
 (add-hook 'before-exit-hook  
