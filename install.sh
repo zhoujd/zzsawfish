@@ -8,7 +8,7 @@ read answer
 case "$answer" in
     "Y" | "y" )
         sudo apt-get install -y sawfish
-        sudo apt-get install -y gnome-panel xscreensaver xloadimage gmrun gcolor2 gcalctool
+        sudo apt-get install -y gnome-panel xscreensaver gmrun gcolor2 gcalctool libimlib2
 esac
 
 ##setup .sawfishrc
