@@ -23,7 +23,7 @@
 (setq load-path (cons (concat zzsawfish-path "lisp") load-path))
 
 (require 'iswitch-window)
-(bind-keys global-keymap "Super-1" 'iswitch-window)
+(bind-keys global-keymap "Super-0" 'iswitch-window)
 
 ;;font set
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
