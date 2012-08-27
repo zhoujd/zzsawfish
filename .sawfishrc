@@ -14,7 +14,8 @@
 (setq default-frame-style 'Crux)
 
 ;;set backgound
-(system (concat zzsawfish-path "/bin/habak-amd64 -ms " zzsawfish-path "ubuntu-boot.png &"))
+(setq background-list '("warty-final-ubuntu.png" "ubuntu-boot.png"))
+(system (concat zzsawfish-path "/bin/habak-amd64 -ms " zzsawfish-path (nth 0 background-list) " &"))
 
 ;;capture screen
 (defun capture-root-window ()  
