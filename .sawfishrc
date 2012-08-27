@@ -112,7 +112,7 @@
       )) 
 
 (bind-keys root-window-keymap "button3-click1" '(popup-root-menu))
-(bind-keys window-keymap      "Meta-F10"       '(maximize-window-fullscreen-toggle))
+(bind-keys window-keymap      "Meta-F10"       'maximize-window-fullscreen-toggle)
 
 (bind-keys global-keymap "Super-TAB"   '(cycle-windows))  
 (bind-keys global-keymap "Super-Right" '(next-workspace))
