@@ -2,5 +2,6 @@
 ! for pc-keyboard with `Windows' keys  
 ! left key with MSWindows logo  
 keycode 115 = Super_L  
-! right key with MSWindows logo  
+! right key with MSWindows logo
+remove mod4 = Super_R
 keycode 116 = Hyper_R  
