@@ -11,7 +11,7 @@
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
 
 ;;set frame default style
-(setq default-frame-style 'microGUI)
+(setq default-frame-style 'Crux)
 
 ;;set backgound
 (system (concat zzsawfish-path "/bin/habak-amd64 -ms " zzsawfish-path "ubuntu-boot.png &"))
