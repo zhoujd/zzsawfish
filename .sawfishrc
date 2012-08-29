@@ -63,7 +63,7 @@
   '(("gnome-panel")
     ("nm-applet")
     ("xscreensaver" "-no-splash")
-    ;;("gnome-settings-daemon")   ;;for ubuntu 11.04 use gtk
+    ;("gnome-settings-daemon")   ;;for ubuntu 11.04 use gtk
     ("numlockx")
     ))
 
@@ -147,16 +147,14 @@
 
 (bind-keys global-keymap "Super-F10" '(maximize-window-toggle (current-event-window)))
 
-;;for run special program
-(bind-keys global-keymap "Super-t"  '(system "gnome-terminal &"))
-(bind-keys global-keymap "Super-e"  '(system "emacs &"))
 (bind-keys global-keymap "Super-l"  '(system "xscreensaver-command -lock &"))
 
-(bind-keys global-keymap "Super-f"  '(jump-or-exec "Firefox" "firefox"))
-(bind-keys global-keymap "Super-b"  '(jump-or-exec "Beyond Compare" "bcompare"))
-
+;;for run special program
 (define exec-keymap (make-keymap))
 (bind-keys global-keymap "Super-e" exec-keymap)
 (bind-keys exec-keymap "e" '(system "emacs &"))
+(bind-keys exec-keymap "t" '(system "gnome-terminal &"))
+(bind-keys exec-keymap "f" '(jump-or-exec "Firefox" "firefox"))
+(bind-keys exec-keymap "b" '(jump-or-exec "Beyond Compare" "bcompare"))
 
 ;;;~/.sawfishrc end here
