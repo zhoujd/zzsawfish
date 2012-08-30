@@ -1,26 +1,17 @@
 ;;;This is sawfish configure for zhoujd
 ;;;Create by zhoujd on 20120803
 
-;;映射 Win 键可以用 xmodmap 程序来完成，这里介绍了映射的方法。还可以用这个方法来交换 Control 和 Caps Lock 键。
-;;这里是我的 ~/.Xmodmap 文件：
-;;
-;;keycode 115 = Super_L
-;;keycode 116 = Hyper_R
-;;clear mod3
-;;add mod3 = Super_L
-;;clear mod4
-;;add mod4 = Hyper_R
-;;
-;;配置好之后要保证启动 X 的时候 xmodmap 程序去加载这个文件，重新启动一下 X ，并在一个终端模拟器里面输入 xmodmap ，
-;;看是否有我们写进去的这些内容，如果没有的话，则要在 ~/.xinitrc 或 ~/.xsession 之类的文件里面手工加上一句：
-;;
-;;xmodmap ~/.Xmodmap
-
 ;;zzsawfish home
 (setq zzsawfish-path "~/zzsawfish/")
 
 ;;add load-path
 (setq load-path (cons (concat zzsawfish-path "lisp") load-path))
+
+(require 'sawfish.wm.menus)
+(setq capture-menu  
+      '(("current window"  (capture-this-window))  
+        ("region"          (capture-region))  
+        ("full screen"     (capture-root-window))))  
 
 (require 'iswitch-window)
 (bind-keys global-keymap "Super-0" 'iswitch-window)
@@ -122,9 +113,12 @@
     '(("terminal"   (system "gnome-terminal &"))  
       ("emacs"      (system "emacs &"))  
       ("firefox"    (system "firefox &"))  
-      ("bcompare"   (system "bcompare &"))  
+      ("bcompare"   (system "bcompare &"))
+      ("evince"     (system "evince &"))
+      ("monitor"    (system "gnome-system-monitor &"))
       ("gcolor2"    (system "gcolor2 &"))  
-      ("gcalctool"  (system "gcalctool &"))  
+      ("gcalctool"  (system "gcalctool &"))
+      ("capture"    (popup-menu capture-menu))  
       ()
       ("run"        (system "gmrun &"))
       ("lock"       (system "xscreensaver-command -lock &"))
@@ -154,6 +148,7 @@
 (bind-keys global-keymap "Super-e" exec-keymap)
 (bind-keys exec-keymap "e" '(system "emacs &"))
 (bind-keys exec-keymap "t" '(system "gnome-terminal &"))
+(bind-keys exec-keymap "n" '(system "nautilus &"))
 (bind-keys exec-keymap "f" '(jump-or-exec "Firefox" "firefox"))
 (bind-keys exec-keymap "b" '(jump-or-exec "Beyond Compare" "bcompare"))
 
