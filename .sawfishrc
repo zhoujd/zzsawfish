@@ -7,14 +7,15 @@
 ;;add load-path
 (setq load-path (cons (concat zzsawfish-path "lisp") load-path))
 
+;; Load Modules
+(require 'sawfish.wm.viewport)
 (require 'sawfish.wm.menus)
+(require 'iswitch-window)
+
 (setq capture-menu  
       '(("current window"  (capture-this-window))  
         ("region"          (capture-region))  
-        ("full screen"     (capture-root-window))))  
-
-(require 'iswitch-window)
-(bind-keys global-keymap "Super-0" 'iswitch-window)
+        ("full screen"     (capture-root-window))))
 
 ;;font set
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
@@ -108,6 +109,53 @@
       (hide-desktop)
       (show-desktop)))
 
+;; display-message-with-timeout
+(define (display-message-with-timeout message timeout)
+  (display-message message)
+  (make-timer (lambda () (display-message nil)) timeout))
+
+;; iconify-all-windows
+(define (iconify-all-windows)
+  (map-windows iconify-window))
+
+(define-command 'iconify-all-windows iconify-all-windows)
+
+;; close-all-windows
+(define (close-all-windows)
+  (map-windows delete-window))
+
+(define-command 'close-all-windows close-all-windows)
+
+;; get-frame-width
+(define (get-frame-width w)
+  (let ((dims (window-dimensions w))
+	(frame (window-frame-dimensions w)))
+    (- (car frame) (car dims))))
+
+;; get-frame-height
+(define (get-frame-height w)
+  (let ((dims (window-dimensions w))
+	(frame (window-frame-dimensions w)))
+    (- (cdr frame) (cdr dims))))
+
+;; resize-window-half-screen-width
+(define (resize-window-half-screen-width w)
+  (let ((height (cdr (window-dimensions w)))
+	(half-width (/ (screen-width) 2))
+	(frame-width (get-frame-width w)))
+  (resize-window-with-hints* w (- half-width frame-width) frame-width)))
+
+(define-command 'resize-window-half-screen-width resize-window-half-screen-width #:spec "%W")
+
+;; resize-window-half-screen-height
+(define (resize-window-half-screen-height w)
+  (let ((width (car (window-dimensions w)))
+	(half-height (/ (screen-height) 2))
+	(frame-height (get-frame-height w)))
+    (resize-window-with-hints* w width (- half-height frame-height))))
+
+(define-command 'resize-window-half-screen-height resize-window-half-screen-height #:spec "%W")
+
 (setq apps-menu-autogen   nil)
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
@@ -137,35 +185,41 @@
         ("Lock"       (system "xscreensaver-command -lock &"))
         )) 
 
-(bind-keys root-window-keymap "button3-click1" 'popup-root-menu)
+;; Rootwindow Keybindings
+(bind-keys root-window-keymap
+           "Button2-Click" 'popup-window-list-menu
+           "Button3-Click" 'popup-root-menu)
+
 (bind-keys window-keymap      "Meta-F10"       'maximize-window-fullscreen-toggle)
 
 (bind-keys global-keymap
-           "Super-TAB"   'cycle-windows
-           "Super-Right" 'next-workspace
-           "Super-Left"  'previous-workspace
-           "Super-Down"  'lower-window
-           "Super-Up"    'raise-window
+           "W-TAB"   'cycle-windows
+           "W-Right" 'next-workspace
+           "W-Left"  'previous-workspace
+           "W-Down"  'lower-window
+           "W-Up"    'raise-window
 
            ;;window 
-           "Super-F1"    'popup-root-menu
-           "Super-F2"    '(system "gmrun &")
-           "Super-F3"    '(show-desktop-toggle)
-           "Super-F4"    '(delete-window (current-event-window))
+           "W-F1"    'popup-root-menu
+           "W-F2"    '(system "gmrun &")
+           "W-F3"    '(show-desktop-toggle)
+           "W-F4"    '(delete-window (current-event-window))
 
-           "Super-F10"   '(maximize-window-toggle (current-event-window))
+           "W-F10"   '(maximize-window-toggle (current-event-window))
 
-           "Super-Menu"  'popup-window-menu
+           "W-0"      'iswitch-window
+
+           "W-Menu"  'popup-window-menu
            "C-Menu"      'popup-root-menu
            "S-Menu"      'popup-apps-menu
            
-           "Super-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
-           "Super-l"     '(system "xscreensaver-command -lock &")
-           "Super-x"     '(system "xkill &"))
+           "W-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
+           "W-l"     '(system "xscreensaver-command -lock &")
+           "W-x"     '(system "xkill &"))
 
 ;;for run special program
 (define exec-keymap (make-keymap))
-(bind-keys global-keymap "Super-e" exec-keymap)
+(bind-keys global-keymap "w-e" exec-keymap)
 (bind-keys exec-keymap
            "e"    '(system "emacs &")
            "t"    '(system "gnome-terminal &")
@@ -183,11 +237,54 @@
 
 ;;for menus control
 (define menus-keymap (make-keymap))
-(bind-keys global-keymap "Super-m" menus-keymap)
+(bind-keys global-keymap "W-m" menus-keymap)
 (bind-keys menus-keymap
            "1"    'popup-root-menu
            "2"    'popup-window-menu
            "3"    'popup-apps-menu)
 
+;; Workspace Keymacros
+(define ws-keymap (make-keymap))
+(bind-keys global-keymap "W-w" ws-keymap)
+
+(bind-keys ws-keymap
+           "Left"  'workspace-left
+           "Up"    'workspace-up
+           "Right" 'workspace-right
+           "Down"  'workspace-down)
+
+;; Viewport keymacros
+(define vp-keymap (make-keymap))
+(bind-keys global-keymap "W-v" vp-keymap)
+
+(bind-keys vp-keymap
+           "Left"  '(move-viewport -1 0)
+           "Up"    '(move-viewport 0 -1)
+           "Right" '(move-viewport 1 0)
+           "Down"  '(move-viewport 0 1))
+
+(bind-keys window-keymap
+           "W-F4"  'delete-window-safely
+           "W-F5"  'destroy-window
+           "C-W-m" 'maximize-window
+           "C-W-w" 'unmaximize-window
+           "C-W-s" 'shade-window
+           "C-W-u" 'unshade-window
+           "C-W-i" 'iconify-window
+           "C-W-r" 'raise-window
+           "C-W-l" 'lower-window
+           "C-W-R" 'raise-window-depth
+           "C-W-L" 'lower-window-depth
+           "C-W-f" 'maximize-window-fullscreen
+           "C-W-v" 'maximize-window-vertically
+           "C-W-h" 'maximize-window-horizontally
+           "C-W-y" 'move-window-interactively
+           "C-W-x" 'resize-window-interactively
+           "C-S-r" 'rename-window
+           "C-S-c" 'move-window-center
+           "C-S-h" 'halve-window-size
+           "C-S-d" 'double-window-size
+           "C-S-e" 'resize-window-half-screen-height
+           "C-S-w" 'resize-window-half-screen-width)
 
 ;;;~/.sawfishrc end here
