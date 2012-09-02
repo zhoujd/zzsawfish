@@ -137,32 +137,57 @@
         ("Lock"       (system "xscreensaver-command -lock &"))
         )) 
 
-(bind-keys root-window-keymap "button3-click1" '(popup-root-menu))
+(bind-keys root-window-keymap "button3-click1" 'popup-root-menu)
 (bind-keys window-keymap      "Meta-F10"       'maximize-window-fullscreen-toggle)
 
-(bind-keys global-keymap "Super-TAB"   '(cycle-windows))  
-(bind-keys global-keymap "Super-Right" '(next-workspace))
-(bind-keys global-keymap "Super-Left"  '(previous-workspace))
-(bind-keys global-keymap "Super-Down"  '(lower-window))
-(bind-keys global-keymap "Super-Up"    '(raise-window))
+(bind-keys global-keymap
+           "Super-TAB"   'cycle-windows
+           "Super-Right" 'next-workspace
+           "Super-Left"  'previous-workspace
+           "Super-Down"  'lower-window
+           "Super-Up"    'raise-window
 
-;;window manage
-(bind-keys global-keymap "Super-F1"  '(popup-root-menu))  
-(bind-keys global-keymap "Super-F2"  '(system "gmrun &"))
-(bind-keys global-keymap "Super-F3"  '(show-desktop-toggle))
-(bind-keys global-keymap "Super-F4"  '(delete-window (current-event-window)))  
+           ;;window 
+           "Super-F1"    'popup-root-menu
+           "Super-F2"    '(system "gmrun &")
+           "Super-F3"    '(show-desktop-toggle)
+           "Super-F4"    '(delete-window (current-event-window))
 
-(bind-keys global-keymap "Super-F10" '(maximize-window-toggle (current-event-window)))
+           "Super-F10"   '(maximize-window-toggle (current-event-window))
 
-(bind-keys global-keymap "Super-l"  '(system "xscreensaver-command -lock &"))
+           "Super-Menu"  'popup-window-menu
+           "C-Menu"      'popup-root-menu
+           "S-Menu"      'popup-apps-menu
+           
+           "Super-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
+           "Super-l"     '(system "xscreensaver-command -lock &")
+           "Super-x"     '(system "xkill &"))
 
 ;;for run special program
 (define exec-keymap (make-keymap))
 (bind-keys global-keymap "Super-e" exec-keymap)
-(bind-keys exec-keymap "e" '(system "emacs &"))
-(bind-keys exec-keymap "t" '(system "gnome-terminal &"))
-(bind-keys exec-keymap "n" '(system "nautilus &"))
-(bind-keys exec-keymap "f" '(jump-or-exec "Firefox" "firefox"))
-(bind-keys exec-keymap "b" '(jump-or-exec "Beyond Compare" "bcompare"))
+(bind-keys exec-keymap
+           "e"    '(system "emacs &")
+           "t"    '(system "gnome-terminal &")
+           "n"    '(system "nautilus --no-desktop ~ &")
+           "f"    '(jump-or-exec "Firefox" "firefox")
+           "b"    '(jump-or-exec "Beyond Compare" "bcompare")           
+           "g"    '(jump-or-exec "Geany" "geany" t)
+           "G"    '(jump-or-exec "GPRename" "gprename" nil)
+           
+           "F2"   '(system "gksu &")
+           "F9"   '(jump-or-exec "Synaptic" "gksu -u root synaptic" nil)
+           "F10"  '(jump-or-exec "Gtkorphan" "gksu -u root gtkorphan" t)
+           "F11"  '(system "gksu -u root /etc/init.d/network-manager restart &")
+           "F12"  '(system "gksu -u root /etc/init.d/privoxy restart &"))
+
+;;for menus control
+(define menus-keymap (make-keymap))
+(bind-keys global-keymap "Super-m" menus-keymap)
+(bind-keys menus-keymap
+           "1"    'popup-root-menu
+           "2"    'popup-window-menu
+           "3"    'popup-apps-menu)
+
 
 ;;;~/.sawfishrc end here

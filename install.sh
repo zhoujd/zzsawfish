@@ -8,7 +8,8 @@ read answer
 case "$answer" in
     "Y" | "y" )
         sudo apt-get install -y sawfish sawfish-data sawfish-dbg sawfish-lisp-source sawfish-merlin-ugliness sawfish-themes
-        sudo apt-get install -y gnome-panel xscreensaver gmrun gcolor2 gcalctool libimlib2 numlockx  imagemagick remmina
+        sudo apt-get install -y gnome-panel xscreensaver gmrun gcolor2 gcalctool libimlib2 
+        sudo apt-get install -y numlockx  imagemagick remmina geany gtkorphan gprename
 esac
 
 ##setup .sawfishrc
