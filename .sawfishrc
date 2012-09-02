@@ -11,6 +11,7 @@
 (require 'sawfish.wm.viewport)
 (require 'sawfish.wm.menus)
 (require 'iswitch-window)
+(require 'jump-or-exec)
 
 (setq capture-menu  
       '(("current window"  (capture-this-window))  
@@ -73,27 +74,6 @@
 (add-hook 'before-exit-hook  
           (lambda ()  
             (mapc stop-process (active-processes))))
-
-;; this function is used a bit further in, in my local config. i use it to blur
-;; the line between what's running and what needs to be started, so i can hit a
-;; key to load something, or jump to it if it was already running. i love
-;; sawfish.
-(defun jump-or-exec (re prog #!optional onfocused)
-  "jump to a window matched by re, or start program otherwise."
-  (catch 'return
-    (let ((wind (get-window-by-name-re re)))
-      (if (functionp onfocused) ; check if already focused
-          (let ((curwin (input-focus)))
-            (if curwin
-                (if (string-match re (window-name curwin))
-                    (progn
-                      (funcall onfocused wind)
-                      (throw 'return))))))
-      (if (windowp wind)
-          (display-window wind)
-        (if (functionp prog)
-            (funcall prog)
-          (system (concat prog "&")))))))
 
 ;; define functions
 (defun backgroundize (string)
