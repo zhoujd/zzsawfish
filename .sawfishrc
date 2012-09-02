@@ -137,12 +137,13 @@
 (define-command 'resize-window-half-screen-height resize-window-half-screen-height #:spec "%W")
 
 (setq apps-menu-autogen   nil)
+(setq workspace-names '("work")) 
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
 
 (setq root-menu
-      '(("Workspaces" . workspace-menu)
-        ("Windows"    . window-menu)
+      '(("Windows"    . window-menu)
+        ("Workspaces" . workspace-menu)
         ("Programs"   . apps-menu)
         ("Customize"  . custom-menu)
         ("About..."   (customize 'about))
@@ -187,11 +188,11 @@
 
            "W-F10"   '(maximize-window-toggle (current-event-window))
 
-           "W-0"      'iswitch-window
+           "W-0"     'iswitch-window
 
            "W-Menu"  'popup-window-menu
-           "C-Menu"      'popup-root-menu
-           "S-Menu"      'popup-apps-menu
+           "C-Menu"  'popup-root-menu
+           "S-Menu"  'popup-apps-menu
            
            "W-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
            "W-l"     '(system "xscreensaver-command -lock &")
