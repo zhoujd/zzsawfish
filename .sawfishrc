@@ -90,54 +90,20 @@
       (show-desktop)))
 
 ;; display-message-with-timeout
-(define (display-message-with-timeout message timeout)
+(defun display-message-with-timeout (message timeout)
   (display-message message)
   (make-timer (lambda () (display-message nil)) timeout))
 
 ;; iconify-all-windows
-(define (iconify-all-windows)
+(defun iconify-all-windows ()
   (map-windows iconify-window))
 
-(define-command 'iconify-all-windows iconify-all-windows)
-
 ;; close-all-windows
-(define (close-all-windows)
+(defun close-all-windows ()
   (map-windows delete-window))
 
-(define-command 'close-all-windows close-all-windows)
-
-;; get-frame-width
-(define (get-frame-width w)
-  (let ((dims (window-dimensions w))
-	(frame (window-frame-dimensions w)))
-    (- (car frame) (car dims))))
-
-;; get-frame-height
-(define (get-frame-height w)
-  (let ((dims (window-dimensions w))
-	(frame (window-frame-dimensions w)))
-    (- (cdr frame) (cdr dims))))
-
-;; resize-window-half-screen-width
-(define (resize-window-half-screen-width w)
-  (let ((height (cdr (window-dimensions w)))
-	(half-width (/ (screen-width) 2))
-	(frame-width (get-frame-width w)))
-  (resize-window-with-hints* w (- half-width frame-width) frame-width)))
-
-(define-command 'resize-window-half-screen-width resize-window-half-screen-width #:spec "%W")
-
-;; resize-window-half-screen-height
-(define (resize-window-half-screen-height w)
-  (let ((width (car (window-dimensions w)))
-	(half-height (/ (screen-height) 2))
-	(frame-height (get-frame-height w)))
-    (resize-window-with-hints* w width (- half-height frame-height))))
-
-(define-command 'resize-window-half-screen-height resize-window-half-screen-height #:spec "%W")
-
 (setq apps-menu-autogen   nil)
-(setq workspace-names '("work")) 
+(setq workspace-names     '("work")) 
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
 
@@ -239,10 +205,10 @@
 (bind-keys global-keymap "W-v" vp-keymap)
 
 (bind-keys vp-keymap
-           "Left"  '(move-viewport -1 0)
-           "Up"    '(move-viewport 0 -1)
-           "Right" '(move-viewport 1 0)
-           "Down"  '(move-viewport 0 1))
+           "Left"  '(move-viewport -1  0)
+           "Up"    '(move-viewport  0 -1)
+           "Right" '(move-viewport  1  0)
+           "Down"  '(move-viewport  0  1))
 
 (bind-keys window-keymap
            "W-F4"  'delete-window-safely
@@ -261,11 +227,6 @@
            "C-W-h" 'maximize-window-horizontally
            "C-W-y" 'move-window-interactively
            "C-W-x" 'resize-window-interactively
-           "C-S-r" 'rename-window
-           "C-S-c" 'move-window-center
-           "C-S-h" 'halve-window-size
-           "C-S-d" 'double-window-size
-           "C-S-e" 'resize-window-half-screen-height
-           "C-S-w" 'resize-window-half-screen-width)
+           )
 
 ;;;~/.sawfishrc end here
