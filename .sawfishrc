@@ -140,29 +140,29 @@
 (bind-keys window-keymap      "Meta-F10"       'maximize-window-fullscreen-toggle)
 
 (bind-keys global-keymap
-           "W-TAB"   'cycle-windows
-           "W-Right" 'next-workspace
-           "W-Left"  'previous-workspace
-           "W-Down"  'lower-window
-           "W-Up"    'raise-window
+           "Super-TAB"   'cycle-windows
+           "Super-Right" 'next-workspace
+           "Super-Left"  'previous-workspace
+           "Super-Down"  'lower-window
+           "Super-Up"    'raise-window
 
            ;;window 
-           "W-F1"    'popup-root-menu
-           "W-F2"    '(system "gmrun &")
-           "W-F3"    '(show-desktop-toggle)
-           "W-F4"    '(delete-window (current-event-window))
+           "Super-F1"    'popup-root-menu
+           "Super-F2"    '(system "gmrun &")
+           "Super-F3"    '(show-desktop-toggle)
+           "Super-F4"    '(delete-window (current-event-window))
 
-           "W-F10"   '(maximize-window-toggle (current-event-window))
+           "Super-F10"   '(maximize-window-toggle (current-event-window))
 
-           "W-0"     'iswitch-window
+           "Super-0"     'iswitch-window
 
-           "W-Menu"  'popup-window-menu
+           "Super-Menu"  'popup-window-menu
            "C-Menu"  'popup-root-menu
            "S-Menu"  'popup-apps-menu
            
-           "W-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
-           "W-l"     '(system "xscreensaver-command -lock &")
-           "W-x"     '(system "xkill &"))
+           "Super-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
+           "Super-l"     '(system "xscreensaver-command -lock &")
+           "Super-x"     '(system "xkill &"))
 
 ;;for run special program
 (define exec-keymap (make-keymap))
@@ -184,7 +184,7 @@
 
 ;;for menus control
 (define menus-keymap (make-keymap))
-(bind-keys global-keymap "W-m" menus-keymap)
+(bind-keys global-keymap "Super-m" menus-keymap)
 (bind-keys menus-keymap
            "1"    'popup-root-menu
            "2"    'popup-window-menu
@@ -192,7 +192,7 @@
 
 ;; Workspace Keymacros
 (define ws-keymap (make-keymap))
-(bind-keys global-keymap "W-w" ws-keymap)
+(bind-keys global-keymap "Super-w" ws-keymap)
 
 (bind-keys ws-keymap
            "Left"  'workspace-left
@@ -202,7 +202,7 @@
 
 ;; Viewport keymacros
 (define vp-keymap (make-keymap))
-(bind-keys global-keymap "W-v" vp-keymap)
+(bind-keys global-keymap "Super-v" vp-keymap)
 
 (bind-keys vp-keymap
            "Left"  '(move-viewport -1  0)
@@ -211,22 +211,22 @@
            "Down"  '(move-viewport  0  1))
 
 (bind-keys window-keymap
-           "W-F4"  'delete-window-safely
-           "W-F5"  'destroy-window
-           "C-W-m" 'maximize-window
-           "C-W-w" 'unmaximize-window
-           "C-W-s" 'shade-window
-           "C-W-u" 'unshade-window
-           "C-W-i" 'iconify-window
-           "C-W-r" 'raise-window
-           "C-W-l" 'lower-window
-           "C-W-R" 'raise-window-depth
-           "C-W-L" 'lower-window-depth
-           "C-W-f" 'maximize-window-fullscreen
-           "C-W-v" 'maximize-window-vertically
-           "C-W-h" 'maximize-window-horizontally
-           "C-W-y" 'move-window-interactively
-           "C-W-x" 'resize-window-interactively
+           "Super-F4"  'delete-window-safely
+           "Super-F5"  'destroy-window
+           "C-Super-m" 'maximize-window
+           "C-Super-w" 'unmaximize-window
+           "C-Super-s" 'shade-window
+           "C-Super-u" 'unshade-window
+           "C-Super-i" 'iconify-window
+           "C-Super-r" 'raise-window
+           "C-Super-l" 'lower-window
+           "C-Super-R" 'raise-window-depth
+           "C-Super-L" 'lower-window-depth
+           "C-Super-f" 'maximize-window-fullscreen
+           "C-Super-v" 'maximize-window-vertically
+           "C-Super-h" 'maximize-window-horizontally
+           "C-Super-y" 'move-window-interactively
+           "C-Super-x" 'resize-window-interactively
            )
 
 ;;;~/.sawfishrc end here
