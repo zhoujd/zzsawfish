@@ -155,7 +155,7 @@
         )) 
 
 ;;wm modifier value
-(setq wm-modifier-value 'super)
+(custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
 ;; Rootwindow Keybindings
 (bind-keys root-window-keymap
