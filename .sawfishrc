@@ -35,7 +35,7 @@
                  (lambda ()
                    (rand-wallpaper)
                    (delete-timer timer)
-                   ) 30))))
+                   ) 1800))))
 
 (system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 1 list-wallpaper) " &"))
 
