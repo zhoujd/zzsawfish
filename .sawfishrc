@@ -14,17 +14,6 @@
 (require 'jump-or-exec)
 (require 'rep.io.timers)
 
-(setq list-wallpaper '("0.jpg" "1.jpg" "2.jpg" "3.jpg" "4.jpg" "5.jpg"))
-(defun rand-wallpaper ()
-  (let ((timer))
-    (system (format nil "%s%s" "feh --bg-fill ~/Picture/wallpaper/"
-                    (nth (random (length list-wallpaper)) list-wallpaper)))
-    (setq timer (make-timer
-                 (lambda ()
-                   (rand-wallpaper)
-                   (delete-timer timer)
-                   ) 30))))
-
 (setq capture-menu  
       '(("current window"  (capture-this-window))  
         ("region"          (capture-region))  
@@ -40,7 +29,7 @@
 (setq list-wallpaper '("warty-final-ubuntu.png" "ubuntu-boot.png"))
 (defun rand-wallpaper ()
   (let ((timer))
-    (system (format nil "feh --bg-fill %s%s" zzsawfish-path
+    (system (format nil "feh --bg-fill %s%s%s" zzsawfish-path "wallpaper/"
                     (nth (random (length list-wallpaper)) list-wallpaper)))
     (setq timer (make-timer
                  (lambda ()
@@ -48,7 +37,7 @@
                    (delete-timer timer)
                    ) 30))))
 
-(system (concat "feh --bg-fill " zzsawfish-path (nth 0 list-wallpaper) " &"))
+(system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 1 list-wallpaper) " &"))
 
 ;;capture screen
 (defun capture-root-window ()  
