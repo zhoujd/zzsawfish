@@ -37,7 +37,7 @@
                    (delete-timer timer)
                    ) 1800))))
 
-(system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 1 list-wallpaper) " &"))
+(system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 0 list-wallpaper) " &"))
 
 ;;capture screen
 (defun capture-root-window ()  
