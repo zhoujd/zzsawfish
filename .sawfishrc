@@ -7,12 +7,20 @@
 ;;add load-path
 (setq load-path (cons (concat zzsawfish-path "lisp") load-path))
 
+;;add theme-load-path
+(setq theme-load-path 
+     (append (list
+              (concat zzsawfish-path "theme"))
+              theme-load-path))
+
 ;; Load Modules
+(require 'sawfish-defaults)
 (require 'sawfish.wm.viewport)
 (require 'sawfish.wm.menus)
 (require 'iswitch-window)
 (require 'jump-or-exec)
 (require 'rep.io.timers)
+(require 'run-application)
 
 (setq capture-menu  
       '(("Current Window"  (capture-this-window))  
@@ -190,6 +198,7 @@
            "G"    '(jump-or-exec "GPRename" "gprename" nil)
            
            "F2"   '(system "gksu &")
+           "C-F2" 'run-application
            "F9"   '(jump-or-exec "Synaptic" "gksu -u root synaptic" nil)
            "F10"  '(jump-or-exec "Gtkorphan" "gksu -u root gtkorphan" t)
            "F11"  '(system "gksu -u root /etc/init.d/network-manager restart &")
