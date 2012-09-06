@@ -28,8 +28,9 @@
 ;;set backgound
 (setq list-wallpaper '("warty-final-ubuntu.png" "ubuntu-boot.png"))
 (defun rand-wallpaper ()
+  (interactive)  
   (let ((timer))
-    (system (format nil "feh --bg-fill %s%s%s" zzsawfish-path "wallpaper/"
+    (system (format nil "feh --bg-fill %s%s%s &" zzsawfish-path "wallpaper/"
                     (nth (random (length list-wallpaper)) list-wallpaper)))
     (setq timer (make-timer
                  (lambda ()
