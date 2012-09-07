@@ -97,7 +97,7 @@
 
 ;; define functions
 (defun backgroundize (string)
-  "Append a character `&' to STRING if it is not end with a `&'."
+  "Append a character '&' to STRING if it is not end with a '&'."
   (let ((len (length string)))
     (if (string= "&" (substring string (- len 1)))
         string
@@ -157,7 +157,6 @@
 
 ;; Rootwindow Keybindings
 (bind-keys root-window-keymap
-           "Button2-Click" 'popup-window-list-menu
            "Button3-Click" 'popup-root-menu)
 
 (bind-keys global-keymap
