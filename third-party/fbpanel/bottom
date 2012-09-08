@@ -112,7 +112,7 @@ Global {
     allign = center
     margin = 0
     widthtype = percent
-    width = 100
+    width = 86
     height = 24
     transparent = true
     tintcolor = #ffffff
@@ -121,7 +121,7 @@ Global {
     setpartialstrut = true
     autohide = false
     heightWhenHidden = 2
-    roundcorners = false
+    roundcorners = true
     roundcornersradius = 7
     layer = none
     MaxElemHeight = 32
@@ -142,7 +142,8 @@ Plugin {
     config {
         IconSize = 22
         #icon = start-here
-        icon = logo
+        # Use a nice Debian logo for the menu list ;-)
+        image = /usr/share/pixmaps/debian-logo.png
         systemmenu {
         }
         separator {
@@ -154,7 +155,7 @@ Plugin {
 	    item {
 		name = Terminal
 		icon = terminal
-		action = gnome-terminal
+		action = x-terminal-emulator
 	    }
             item {
                 name = Lock Display
@@ -176,7 +177,7 @@ Plugin {
             item {
                 name = logout
                 icon = gnome-session-logout
-                action = /usr/libexec/fbpanel/xlogout
+                action = /usr/lib/fbpanel/fbpanel/xlogout
             }
         }
     }
@@ -203,7 +204,7 @@ Plugin {
         button {
             icon = terminal
             tooltip = Terminal
-            action = gnome-terminal
+            action = x-terminal-emulator
         }
 	button {
             icon = web-browser
@@ -313,9 +314,9 @@ Plugin {
     }
 }
 
-#plugin {
-#    type = volume
-#}
+plugin {
+    type = volume
+}
 
 #plugin {
 #    type = battery
