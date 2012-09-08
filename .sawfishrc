@@ -17,8 +17,12 @@
                (concat zzsawfish-path "theme"))
               theme-load-path))
 
-(require 'common-setting)
-(require 'other-setting)
-(require 'key-setting)
+;;load self setting
+(mapcar require
+        '(
+          common-setting
+          other-setting
+          key-setting
+          ))
 
 ;;;~/.sawfishrc end here
