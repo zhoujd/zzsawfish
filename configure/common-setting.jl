@@ -35,9 +35,10 @@
     ("nm-applet")
     ("bluetooth-applet")
     ("xscreensaver" "-no-splash")
-    ("/usr/lib/vino/vino-server" "--sm-disable")  ;;for remote desktop
-    ("gnome-settings-daemon")   ;;for ubuntu 11.04 use gtk
+    ("/usr/lib/vino/vino-server" "--sm-disable")           ;;for remote desktop
+    ("gnome-settings-daemon")                              ;;for ubuntu 11.04 use gtk
     ("gnome-keyring-daemon" "--start --components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+    ("ibus-daemon" "--xim")                                ;;input method
     ("numlockx" "on")
     ))
 
