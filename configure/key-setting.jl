@@ -44,7 +44,7 @@
            "e"    '(system "emacs &")
            "t"    '(system "gnome-terminal &")
            "n"    '(system "nautilus --no-desktop ~ &")
-           "f"    '(jump-or-exec "Firefox" "firefox")
+           "f"    '(jump-or-exec "Firefox" "firefox" #:match-class t)
            "b"    '(jump-or-exec "Beyond Compare" "bcompare")           
            "g"    '(jump-or-exec "Geany" "geany" t)
            "G"    '(jump-or-exec "GPRename" "gprename" nil)
