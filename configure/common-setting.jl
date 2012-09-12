@@ -26,20 +26,21 @@
 
 ;;set backgound
 (setq list-wallpaper '("warty-final-ubuntu.png" "ubuntu-boot.png"))
-(system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 0 list-wallpaper) " &"))
+;(system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 0 list-wallpaper) " &"))
 
 ;;set start program
 (define startup-programs  
-  '(
-    ("gnome-panel")
-    ("nm-applet")
-    ("bluetooth-applet")
-    ("xscreensaver" "-no-splash")
-    ("/usr/lib/vino/vino-server" "--sm-disable")           ;;for remote desktop
-    ("gnome-settings-daemon")                              ;;for ubuntu 11.04 use gtk
-    ("gnome-keyring-daemon" "--start --components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
-    ("ibus-daemon" "--xim")                                ;;input method
-    ("numlockx" "on")
+  (list
+    ;'("gnome-panel")
+    ;'("nm-applet")
+    ;'("bluetooth-applet")
+    '("xscreensaver" "-no-splash")
+    '("/usr/lib/vino/vino-server" "--sm-disable")           ;;for remote desktop
+    '("gnome-settings-daemon")                              ;;for ubuntu 11.04 use gtk
+    '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+    '("ibus-daemon" "--xim")                                ;;input method
+    '("numlockx" "on")
+    (list "feh"  "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 1 list-wallpaper)))
     ))
 
 (add-hook 'before-exit-hook  
