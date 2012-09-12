@@ -26,7 +26,6 @@
 
 ;;set backgound
 (setq list-wallpaper '("warty-final-ubuntu.png" "ubuntu-boot.png"))
-;(system (concat "feh --bg-fill " zzsawfish-path "wallpaper/" (nth 0 list-wallpaper) " &"))
 
 ;;set start program
 (define startup-programs  
