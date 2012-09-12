@@ -32,8 +32,8 @@
 (define startup-programs  
   (list
     ;'("gnome-panel")
-    ;'("nm-applet")
-    ;'("bluetooth-applet")
+    '("nm-applet")
+    '("bluetooth-applet")
     '("xscreensaver" "-no-splash")
     '("/usr/lib/vino/vino-server" "--sm-disable")           ;;for remote desktop
     '("gnome-settings-daemon")                              ;;for ubuntu 11.04 use gtk
