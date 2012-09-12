@@ -56,22 +56,38 @@
 
 (defun show-desktop-toggle ()
   "Show or hide the desktop."
+  (interactive)  
   (if (showing-desktop-p)
       (hide-desktop)
       (show-desktop)))
 
 ;; display-message-with-timeout
-(defun display-message-with-timeout (message timeout)
+(defun display-message-with-timeout (message &optional seconds)
+  (interactive)  
   (display-message message)
-  (make-timer (lambda () (display-message nil)) timeout))
+  (make-timer (lambda ()
+                (display-message nil))
+              (or seconds 3)))
 
 ;; iconify-all-windows
 (defun iconify-all-windows ()
+  (interactive)  
   (map-windows iconify-window))
 
 ;; close-all-windows
 (defun close-all-windows ()
+  (interactive)  
   (map-windows delete-window))
+
+
+(defun jump-or-exec-emacs ()
+  (interactive)
+  (jump-or-exec "emacs@"                ; Emacs's title
+                (lambda ()              ; When Emacs isn't running
+                  (system "emacs &")
+                  "sleep 3")
+                (lambda (wind)          ; When already focused
+                  (display-window wind))))
 
 (provide 'other-setting)
 ;;; other-setting.jl end here

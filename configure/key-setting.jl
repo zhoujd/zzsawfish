@@ -41,7 +41,7 @@
 (define exec-keymap (make-keymap))
 (bind-keys global-keymap "W-e" exec-keymap)
 (bind-keys exec-keymap
-           "e"    '(system "emacs &")
+           "e"  'jump-or-exec-emacs
            "t"    '(system "gnome-terminal &")
            "n"    '(system "nautilus --no-desktop ~ &")
            "f"    '(jump-or-exec "Firefox" "firefox" #:match-class t)
@@ -101,6 +101,11 @@
            "C-W-y" 'move-window-interactively
            "C-W-x" 'resize-window-interactively
            )
+
+(define help-keymap (make-keymap))
+(bind-keys global-keymap "W-h" help-keymap)
+
+
 
 (provide 'key-setting)
 ;;; key-setting.jl end here
