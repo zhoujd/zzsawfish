@@ -39,6 +39,7 @@
     '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
     '("ibus-daemon" "--xim")                                ;;input method
     '("numlockx" "on")
+    ;; wallpaper setting
     (list "feh"  "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 1 list-wallpaper)))
     ))
 
@@ -74,6 +75,7 @@
         ("Emacs"      (system "emacs &"))  
         ("Firefox"    (system "firefox &"))  
         ("Bcompare"   (system "bcompare &"))
+        ("Nautilus"   (system "nautilus --no-desktop ~ &"))
         ("Evince"     (system "evince &"))
         ("Monitor"    (system "gnome-system-monitor &"))
         ("Gcolor2"    (system "gcolor2 &"))  
