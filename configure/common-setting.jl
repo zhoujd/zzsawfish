@@ -25,7 +25,7 @@
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
 ;;set backgound
-(setq list-wallpaper '("warty-final-ubuntu.png" "ubuntu-boot.png" "debian.jpg" "gnome.jpg"))
+(setq list-wallpaper '("black.png." "ubuntu-12-04.png" "line.jpg"))
 
 ;;set start program
 (define startup-programs  
@@ -40,7 +40,7 @@
     '("ibus-daemon" "--xim")                                ;;input method
     '("numlockx" "on")
     ;; wallpaper setting
-    (list "feh"  "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 2 list-wallpaper)))
+    (list "feh"  "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 0 list-wallpaper)))
     ))
 
 (add-hook 'before-exit-hook  
