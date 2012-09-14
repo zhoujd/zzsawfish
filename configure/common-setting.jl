@@ -25,7 +25,7 @@
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
 ;;set backgound
-(setq list-wallpaper '("black.png." "ubuntu-12-04.png" "line.jpg"))
+(setq list-wallpaper '("black.png" "ubuntu-12-04.png" "line.jpg"))
 
 ;;set start program
 (define startup-programs  
