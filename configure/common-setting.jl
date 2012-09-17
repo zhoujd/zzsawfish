@@ -9,6 +9,7 @@
 (require 'run-application)
 (require 'string2)
 (require 'sawfish.wm.focus)
+(require 'sawfish.wm.ext.match-window)
 
 (setq capture-menu  
       '(("Current Window"  (capture-this-window))  
@@ -19,8 +20,10 @@
 (setq default-font (get-font "-*-Microsoft YaHei Mono-medium-r-*-*-14-*-*-*-*-*-*-*"))
 
 ;;set frame default style
-(custom-set-typed-variable (quote Crux:normal-color) (quote "#ca0064003b00") (quote (optional color)))
-(custom-set-typed-variable (quote default-frame-style) (quote Crux) (quote frame-style))
+;(custom-set-typed-variable (quote Crux:normal-color) (quote "#ca0064003b00") (quote (optional color)))
+;(custom-set-typed-variable (quote default-frame-style) (quote Crux) (quote frame-style))
+(custom-set-typed-variable (quote default-frame-style) (quote pager) (quote frame-style))
+
 ;;wm modifier value
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
@@ -84,7 +87,7 @@
         ()
         ("Run"        (system "gmrun &"))
         ("Lock"       (system "xscreensaver-command -lock &"))
-        )) 
+        ))
 
 
 (provide 'common-setting)

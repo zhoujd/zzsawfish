@@ -1,0 +1,55 @@
+ 						Pager
+
+This is the second incarnation (part 3),
+
+{(<not old!>)}
+
+it came to my attention that it shaded only to the right corner, 
+i forgot about the other side, i've included a second theme.jl one 
+for each side, because it was easier that way.
+
+
+reasons why this sucks,
+
+->all changes require a re-start, my knowledge of lisp is laughable.
+->there is a certain irony in making it look like the gnome panel.
+->the button is called "right..." but it is on the left.
+->most names do not have any relationship to what they actually represent.
+->the menu button is now a title so if you double click it the window'll 
+shade to the corner 'cause it wasn't working out as it was therefore... 
+->now has a shade style, ala enlightenment.
+->most of the customize things have been disabled for the time being, 
+	they were rather pointless. 
+
+I include a few buttons in the buttons directory, which may or 
+may not be to your liking.
+
+
+--
+
+The reason it's so shabby is i'm hoping someone will take pity on 
+me and do it properly.
+  
+if not I will keep trying...
+
+--
+
+it's probably best to set the matched windows settings to 
+
+frame style "pager" 
+frame type "normal" 
+->this avoids any "border only" unpleasantness
+
+<------------------------------------------->
+
+things that 'could' (but probably shouldn't) use this: 
+
+spager 
+http://www.stanford.edu/~satyakid/spager.html
+
+merlin's stuff (pager, fishbowl etc.)
+www.merlin.org/sawfish 
+
+---
+
+<dpbarr@callnetuk.com>
