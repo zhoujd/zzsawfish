@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0059)http://twistedmatrix.com/~teratorn/better_wm/better_wm.html -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><HTML><HEAD>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16448">
+<META content="text/html; charset=gb2312" http-equiv="Content-Type">
+<STYLE type="text/css"> div.p { margin-top: 7pt;}</STYLE>
+
+<STYLE type="text/css"><!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} --></STYLE>
+<TITLE> Building a Better Window Manager</TITLE></HEAD>
+<BODY>
+<H1 align="center">Building a Better Window Manager </H1>
+<DIV class="p"><!----></DIV>
+<H3 align="center">Eric Mangold<BR>teratorn (at) world (dash) net (dot) net 
+</H3>
+<DIV class="p"><!----></DIV>
+<H3 align="center">December 21, 2003 </H3>
+<DIV class="p"><!----></DIV>
+<H1>Contents </H1><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc1">1&nbsp; 
+Purpose</A><BR><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc2">2&nbsp; 
+Mindset</A><BR><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc3">3&nbsp; 
+Mice Are Slow</A><BR><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc4">4&nbsp; 
+The Keymap</A><BR><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc5">5&nbsp; 
+Choose a Window Manager</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc5.1">5.1&nbsp; 
+Configuring the Window Manager</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc5.2">5.2&nbsp; 
+Launching Programs</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc5.3">5.3&nbsp; 
+General Bindings</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc5.4">5.4&nbsp; 
+Other bindings</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc5.5">5.5&nbsp; 
+Application specific key translation</A><BR><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc6">6&nbsp; 
+Conclusion</A><BR><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tth_sEc7">7&nbsp; 
+Links</A><BR>
+<DIV class="p"><!----></DIV>
+<H2><A name="tth_sEc1">1</A>&nbsp;&nbsp;Purpose</H2>
+<DIV class="p"><!----></DIV>This paper deals with software user interfaces, and 
+primarily with the user interface of window managers<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAB" 
+name="tthFrefAAB"><SUP>1</SUP></A>, or WM's.  It is the author's opinion that 
+there is a lot of software with poor user interface capabilities.  Also, that 
+software with good interface capabilities is almost always in need of 
+fine-tuning.
+<DIV class="p"><!----></DIV>Thus it is the purpose of this paper to describe a 
+good window manager interface.  One that will minimize wasted time, and 
+providing the user with a more streamlined interface experience.  Better 
+concentration should also be achievable while using your computer as opposed to 
+the default interface of most WM's.
+<DIV class="p"><!----></DIV>This paper is aimed at people who havn't thought 
+much about customizing their environment.  However, it's the author's hope that 
+even highly advanced users will find something useful.
+<DIV class="p"><!----></DIV>
+<H2><A name="tth_sEc2">2</A>&nbsp;&nbsp;Mindset</H2>
+<DIV class="p"><!----></DIV>When you're using your computer you should always be 
+aware of <EM>what</EM> you want to do, not just <EM>how</EM> you currently do 
+it. For example, when you want to switch to a certain running application, you 
+might reach for the moues to click it in a task bar, or hit Alt-tab to cycle 
+through your windows.  Never automatically assume that your current tools are 
+the best, and in this case they commonly are not. In this way you can identify 
+faster ways of doing things. 
+<DIV class="p"><!----></DIV>
+<H2><A name="tth_sEc3">3</A>&nbsp;&nbsp;Mice Are Slow</H2>
+<DIV class="p"><!----></DIV>Firstly, if you don't know touch-typing then this 
+tutorial will be of little use.  If you need to, go learn touch-typing first 
+then come back here.
+<DIV class="p"><!----></DIV>It should be obvious that using the mouse to click a 
+button, for example, is painfully slow compared to pushing a key or 
+key-combination.  All too often will software rely on the mouse where good key 
+bindings<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAC" 
+name="tthFrefAAC"><SUP>2</SUP></A> would be better.
+<DIV class="p"><!----></DIV>It wouldn't hurt to develop a healthy disdain for 
+mouse-ware<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAD" 
+name="tthFrefAAD"><SUP>3</SUP></A> and the overuse of mice in general.
+<DIV class="p"><!----></DIV>
+<H2><A name="tth_sEc4">4</A>&nbsp;&nbsp;The Keymap</H2>
+<DIV class="p"><!----></DIV>This section describes how to change what your 
+physical keys do.  You might not want to do this since it will make your 
+keyboard work differently than other peoples.  This is more or less of an issue 
+depending on how frequently you use other "uncustomizable" computers. 
+<DIV class="p"><!----></DIV>We are going to set up the modifier keys.  A 
+modifier is a key you press only in conjunction with other keys.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAE" 
+name="tthFrefAAE"><SUP>4</SUP></A>  C-c and C-v are common bindings for "copy" 
+and "paste" and illustrate the use of modifiers.  Please note that modifiers are 
+slower that just pushing most keys.  You should always prefer to not use 
+modifiers if just pushing a key will work for a given application.  Awkward keys 
+such as Home and End are an exception.  These keys are too hard to push and 
+should never be used.  Use standard emacs bindings instead.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAF" 
+name="tthFrefAAF"><SUP>5</SUP></A>
+<DIV class="p"><!----></DIV>I'll describe two modifier layouts.  The first is 
+the one that I use.  The 2nd is one that you might find more desireable.
+<DIV class="p"><!----></DIV>The first thing we will do is setup the "Control" 
+and "Alt" keys as the two physical keys just to the left of the space-bar.  The 
+two physical keys just to the right of the space-bar will be our "Super" and 
+"Hyper" keys.  This will give names to the keys so we can use them in XFree86.  
+<DIV class="p"><!----></DIV>The physical layout will look like this.<PRE>[&nbsp;Control_L&nbsp;][&nbsp;Alt_L&nbsp;][&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;space&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;][&nbsp;Super_R&nbsp;][&nbsp;Hyper_R&nbsp;]
+
+</PRE>
+<DIV class="p"><!----></DIV>As you can see, all we care about are the two keys 
+on either side of the space-bar, whichever keys they may be.  In case you've 
+never thought about it, you press Alt_L and Super_R with your left and 
+right-hand thumbs, respectively.
+<DIV class="p"><!----></DIV>The reason we do this is to have a number of 
+modifiers that are easy to push that we can use to control things.  Control and 
+Alt (meta) will have application-specific uses.  Super will manipulate windows 
+and the window manager environment (mostly).  Hyper will launch the programs we 
+use (mostly).  I find that I can do everything I need with these four modifiers. 
+  If you find yourself wanting another modifier for something, the right-hand 
+Shift key would probably be a good choice.
+<DIV class="p"><!----></DIV>OK, to get XFree86 to do this you need to edit 
+<TT>~/.Xmodmap</TT>.  You may also use the xkeycaps tool.  Since I don't know 
+your current keymap, I'll give you a procedure that should work regardless.  It 
+may be more detailed than necessary.
+<DIV class="p"><!----></DIV>Step 1.  Open a terminal and run the command 
+"<TT>xev</TT>".  Now push the 2nd key to the left of the space-bar (the one we 
+want to make Control_L).  Write down the keycode.  Repeat for the 1st key to the 
+left of the space-bar, then the 1st on the right, then the 2nd on the right.  
+You have the four keycodes now.
+<DIV class="p"><!----></DIV>Step 2.  Make a backup copy of <TT>~/.Xmodmap</TT>, 
+if it exists, then open <TT>~/.Xmodmap</TT> in a text editor.  Copy and paste 
+the follow block of lines:<PRE>keycode&nbsp;a&nbsp;=&nbsp;Control_L
+keycode&nbsp;b&nbsp;=&nbsp;Alt_L
+keycode&nbsp;c&nbsp;=&nbsp;Super_R
+keycode&nbsp;d&nbsp;=&nbsp;Hyper_R
+clear&nbsp;control
+add&nbsp;control&nbsp;=&nbsp;Control_L
+clear&nbsp;mod1
+add&nbsp;mod1&nbsp;=&nbsp;Alt_L
+clear&nbsp;mod3
+add&nbsp;mod3&nbsp;=&nbsp;Super_R
+clear&nbsp;mod4
+add&nbsp;mod4&nbsp;=&nbsp;Hyper_R
+
+</PRE>
+Now, replace the "a" with the first keycode you wrote down, then replace "b" 
+with the 2nd, and so on.
+<DIV class="p"><!----></DIV>Next, we will swap the Escape and Caps Lock keys.  
+Since Escape is pushed much more frequently than Caps Lock, it makes sense to 
+have it in an easier to reach place.  This is an even greater improvement if you 
+use one of the vi-style editors.  If you're on a standard US keyboard, then add 
+the following lines to your <TT>~/.Xmodmap</TT> file, otherwise you're on your 
+own :).<PRE>keycode&nbsp;66&nbsp;=&nbsp;Escape
+keycode&nbsp;9&nbsp;=&nbsp;Caps_Lock
+
+</PRE>
+Alternate #1 - Instead of the 2nd key left of the space acting as the Control 
+key, have it act as the Escape key, and have the CapsLock key act as Control.  
+You will have to experiment to determine if your useage patterns make this a 
+better layout.
+<DIV class="p"><!----></DIV>Finally, you need to ensure that your system is 
+loading your <TT>~/.Xmodmap</TT> file when you start XFree86.  The easiest way 
+to check is to reboot and/or restart X.  Then open a terminal and run 
+"<TT>xmodmap</TT>".  You should see output that matches what we have configured 
+above.  If not, you need to set xmodmap to load <TT>~/.Xmodmap</TT> manually.  
+If you use the <TT>~/.xinitrc</TT> or <TT>~/.xsession</TT> files, then you can 
+add the line "<TT>xmodmap&nbsp;~/.Xmodmap</TT>" before your WM is launched.  If 
+you are using a graphical login, then you need to find it's startup file, and 
+put the aforementioned line there.
+<DIV class="p"><!----></DIV>
+<H2><A name="tth_sEc5">5</A>&nbsp;&nbsp;Choose a Window Manager</H2>
+<DIV class="p"><!----></DIV>I recommend sawfish.  Other WM's may work, but I'm 
+unware of any that have all the features that I will illustrate.  You may also 
+use sawfish with gnome (I do) if you want "visual representation of the desktop 
+state", such as a task bar and those micro-windows for each virtual desktop.  Of 
+course we won't be clicking on any of those things, but they are useful for 
+keeping track of the stuff that's running on your system.  Gnome's also useful 
+if you want a clock or panel applets or such.
+<DIV class="p"><!----></DIV>
+<H3><A name="tth_sEc5.1">5.1</A>&nbsp;&nbsp;Configuring the Window Manager</H3>
+<DIV class="p"><!----></DIV>I'll detail my current sawfish config.  You can 
+adapt this to any window manager that supports the requisit features (if there 
+are any).  If you do, I would be interested to know which WM you chose and what 
+features made it a good choice. 
+<DIV class="p"><!----></DIV>There are several groups of tasks that your window 
+manager will handle.  I will talk about each individually.
+<DIV class="p"><!----></DIV>
+<H3><A name="tth_sEc5.2">5.2</A>&nbsp;&nbsp;Launching Programs</H3>
+<DIV class="p"><!----></DIV>A major task of the window manager is to launch 
+programs for you.  Another overlapping task is switching to programs that are 
+already running.  We are going to combine both tasks using the same key binding. 
+ This will not work for programs that you run more than once simultaniously.  
+Your terminal emulator will probably be one of those.
+<DIV class="p"><!----></DIV>So, for example, lets say Hyper-e is associated with 
+your editor.  If you press H-e while the editor is not running then it will be 
+launched.  If it is already running then it will be brought to focus (switching 
+to the correct virtual desktop first).
+<DIV class="p"><!----></DIV>This is a powerful mechanism and will save you 
+keeping track of what is running and what isn't.  We will use a sawfish 
+extension called jump-or-exec to do this.  Get it here <A href="http://sawfish.uberstyle.net/index.php/SawfishWiki/JumpOrExec"><TT>http://sawfish.uberstyle.net/index.php/SawfishWiki/JumpOrExec</TT></A> 
+and install it.
+<DIV class="p"><!----></DIV>We are going to use the Hyper key to launch all the 
+programs that we use.  For each program that you want to use with jump-or-exec 
+you need to add a block of code like the following to your 
+<TT>~/.sawfish/rc</TT> file.<PRE>(bind-keys&nbsp;global-keymap
+&nbsp;&nbsp;&nbsp;"H-e"&nbsp;`(jump-or-exec&nbsp;"GVIM"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,(lambda&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(system
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"gvim&nbsp;&amp;"))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,(lambda&nbsp;(wind)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(display-window&nbsp;wind))))
+
+</PRE>
+There are three main parts.  The first "H-e" is the key combination we are 
+binding here. "GVIM" is all or part of the window title of the program.  "gvim 
+&amp;" is the command to run if a window matching the pattern "GVIM" is not 
+found.  Note the trailing ampersand.  Without it the program will run in the 
+foreground and block sawfish effectively hanging your X session.
+<DIV class="p"><!----></DIV>For programs that you run more than once you can use 
+the sawfish keybinding editor.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAG" 
+name="tthFrefAAG"><SUP>6</SUP></A>  Use the "Run shell command" function.
+<DIV class="p"><!----></DIV>The bindings you choose aren't that important.  
+Typically one will use the first letter of the programs name or it's function 
+(such as "e" for "editor").  If such a letter isn't free to use, just pick one 
+that's easy to press.
+<DIV class="p"><!----></DIV>
+<H3><A name="tth_sEc5.3">5.3</A>&nbsp;&nbsp;General Bindings</H3>
+<DIV class="p"><!----></DIV>I'll just give you the bindings I use.  Maybey a 
+different configuration will suit you.  The only rule of thumb is to make the 
+most common bindings the ones that are easiest to press.  Please note these are 
+just the basics, and there are a lot more possibilities.  For example, you could 
+use sawfish to control XMMS.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAH" 
+name="tthFrefAAH"><SUP>7</SUP></A><PRE>Super-a&nbsp;&nbsp;-&nbsp;&nbsp;Activate&nbsp;workspace:&nbsp;1
+Super-s&nbsp;&nbsp;-&nbsp;&nbsp;Activate&nbsp;workspace:&nbsp;2
+Super-d&nbsp;&nbsp;-&nbsp;&nbsp;Activate&nbsp;workspace:&nbsp;3
+Super-f&nbsp;&nbsp;-&nbsp;&nbsp;Activate&nbsp;workspace:&nbsp;4
+Super-m&nbsp;&nbsp;-&nbsp;&nbsp;Maximize&nbsp;window&nbsp;toggle
+Super-x&nbsp;&nbsp;-&nbsp;&nbsp;Delete&nbsp;window&nbsp;safely
+Super-j&nbsp;&nbsp;-&nbsp;&nbsp;Cycle&nbsp;windows
+Super-k&nbsp;&nbsp;-&nbsp;&nbsp;Cycle&nbsp;windows&nbsp;backwards
+Super-h&nbsp;&nbsp;-&nbsp;&nbsp;Previous&nbsp;workspace
+Super-l&nbsp;&nbsp;-&nbsp;&nbsp;Next&nbsp;workspace
+Super-o&nbsp;&nbsp;-&nbsp;&nbsp;Send&nbsp;to&nbsp;next&nbsp;workspace
+Super-i&nbsp;&nbsp;-&nbsp;&nbsp;Send&nbsp;to&nbsp;previous&nbsp;workspace
+Super-r&nbsp;&nbsp;-&nbsp;&nbsp;Run&nbsp;shell&nbsp;command:&nbsp;gmrun
+Super-q&nbsp;&nbsp;-&nbsp;&nbsp;Popup&nbsp;window&nbsp;menu
+Super-t&nbsp;&nbsp;-&nbsp;&nbsp;Popup&nbsp;root&nbsp;menu
+Super-p&nbsp;&nbsp;-&nbsp;&nbsp;Iconify&nbsp;window
+Super-e&nbsp;&nbsp;-&nbsp;&nbsp;Show&nbsp;errors
+Super-u&nbsp;&nbsp;-&nbsp;&nbsp;Gnome&nbsp;logout
+Super-w&nbsp;&nbsp;-&nbsp;&nbsp;Move&nbsp;window&nbsp;interactively
+Hyper-t&nbsp;&nbsp;-&nbsp;&nbsp;Runs&nbsp;my&nbsp;terminal&nbsp;emulator
+
+</PRE>
+<DIV class="p"><!----></DIV>
+<H3><A name="tth_sEc5.4">5.4</A>&nbsp;&nbsp;Other bindings</H3>
+<DIV class="p"><!----></DIV>lookup.jl provides a mechanism to do some nifty 
+things that I find myself doing every day. You can read all about it here <A 
+href="http://www.ewanmellor.org.uk/sawfish.html"><TT>http://www.ewanmellor.org.uk/sawfish.html</TT></A> 
+. Here's the lisp I use for these bindings, but you may want something 
+different.<PRE>(bind-keys&nbsp;global-keymap
+&nbsp;&nbsp;&nbsp;;&nbsp;prompt&nbsp;for&nbsp;google&nbsp;search&nbsp;terms&nbsp;-&nbsp;focus&nbsp;browser&nbsp;window
+&nbsp;&nbsp;&nbsp;"Super-g"&nbsp;'(lookup&nbsp;"google"&nbsp;t&nbsp;nil)
+
+&nbsp;&nbsp;&nbsp;;&nbsp;use&nbsp;X&nbsp;selection&nbsp;as&nbsp;google&nbsp;search&nbsp;terms&nbsp;-&nbsp;focus&nbsp;browser&nbsp;window
+&nbsp;&nbsp;&nbsp;;&nbsp;(if&nbsp;selection&nbsp;contains&nbsp;a&nbsp;URL,&nbsp;then&nbsp;that&nbsp;URL&nbsp;is&nbsp;visited&nbsp;instead
+&nbsp;&nbsp;&nbsp;;&nbsp;of&nbsp;searching&nbsp;google)
+&nbsp;&nbsp;&nbsp;"Super-G"&nbsp;'(lookup&nbsp;"google"&nbsp;t&nbsp;t)
+
+&nbsp;&nbsp;&nbsp;;&nbsp;The&nbsp;next&nbsp;two&nbsp;are&nbsp;the&nbsp;same&nbsp;as&nbsp;the&nbsp;previous&nbsp;two
+&nbsp;&nbsp;&nbsp;;&nbsp;except&nbsp;that&nbsp;they&nbsp;don't&nbsp;focus&nbsp;the&nbsp;browser&nbsp;window
+&nbsp;&nbsp;&nbsp;"H-g"&nbsp;'(lookup&nbsp;"google"&nbsp;nil&nbsp;nil)
+&nbsp;&nbsp;&nbsp;"H-G"&nbsp;'(lookup&nbsp;"google"&nbsp;nil&nbsp;t)
+
+&nbsp;&nbsp;&nbsp;;&nbsp;dictionary&nbsp;searches
+&nbsp;&nbsp;&nbsp;"Super-c"&nbsp;'(lookup&nbsp;"dict"&nbsp;t&nbsp;nil)
+&nbsp;&nbsp;&nbsp;"Super-C"&nbsp;'(lookup&nbsp;"dict"&nbsp;t&nbsp;t)
+
+&nbsp;&nbsp;&nbsp;;&nbsp;thesaurus&nbsp;searches
+&nbsp;&nbsp;&nbsp;"Super-v"&nbsp;'(lookup&nbsp;"thes"&nbsp;t&nbsp;nil)
+&nbsp;&nbsp;&nbsp;"Super-V"&nbsp;'(lookup&nbsp;"thes"&nbsp;t&nbsp;t))
+
+</PRE>
+<DIV class="p"><!----></DIV>
+<H3><A name="tth_sEc5.5">5.5</A>&nbsp;&nbsp;Application specific key 
+translation</H3>
+<DIV class="p"><!----></DIV>This section deals with improving upon an 
+applications keyboard interface where such application does not provide a way to 
+do so "natively".  An example will make this clear.  X-Chat, an excellent IRC 
+client, brings up the Search dialog box when you press the C-f binding.  Some 
+folks may prefer this, but I would prefer C-f to move the cursor forward one 
+space in keeping with the other emacs bindings.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAI" 
+name="tthFrefAAI"><SUP>8</SUP></A>
+<DIV class="p"><!----></DIV>With a bit of lisp code, sawfish can pull some 
+tricks to make the program interface the way we want it to.  In this case, we 
+will catch the C-f event and synthesizing a Right (arrow) event thus producing 
+the desired effect.  
+<DIV class="p"><!----></DIV>To do this, we will first add the following block of 
+code to the <TT>~/.sawfish/rc</TT> file.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtAAJ" 
+name="tthFrefAAJ"><SUP>9</SUP></A><PRE>(define-match-window-setter&nbsp;'keymap-trans
+&nbsp;&nbsp;(lambda&nbsp;(w&nbsp;prop&nbsp;value)
+&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(unused&nbsp;prop))
+&nbsp;&nbsp;&nbsp;&nbsp;(let&nbsp;((keymap&nbsp;(or&nbsp;(window-get&nbsp;w&nbsp;'keymap)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(window-put&nbsp;w&nbsp;'keymap&nbsp;(copy-sequence&nbsp;window-keymap)))))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(mapcar
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;(pair)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;pair&nbsp;of&nbsp;from&nbsp;and&nbsp;to&nbsp;keys
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(bind-keys
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keymap&nbsp;(car&nbsp;pair)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(lambda&nbsp;()&nbsp;(interactive)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(synthesize-event&nbsp;(lookup-event&nbsp;(cadr&nbsp;pair))&nbsp;(input-focus)))))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value))))
+
+</PRE>
+Now add a block like the following for each program you want to "fix".<PRE>(add-window-matcher&nbsp;'WM_CLASS&nbsp;"Xchat"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'(keymap-trans&nbsp;.&nbsp;(("C-f"&nbsp;"Right")&nbsp;("C-s"&nbsp;"C-f"))))
+
+</PRE>
+There are three parts you should understand.  The first is the symbol WM_CLASS, 
+which indicates the following string will match against the class of the 
+window.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtABA" 
+name="tthFrefABA"><SUP>10</SUP></A> If you would rather match the window's 
+title, use WM_NAME instead.
+<DIV class="p"><!----></DIV>Next is the string <TT>"Xchat"</TT>.  It selects the 
+window(s) that our key translations will apply to.  We use this so that our 
+translations will only affect the desired window(s).  You can get the class 
+string by using the "Matched Windows" configurator.<A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFtNtABB" 
+name="tthFrefABB"><SUP>11</SUP></A>  If you are matching the window title 
+instead, then just pick a unique part of the title string (it doesn't have to be 
+the whole thing).
+<DIV class="p"><!----></DIV>The third is the list of key events to translate.  
+In the example above, that is the part of the code which reads 
+<TT>(("C-f"&nbsp;"Right")&nbsp;("C-s"&nbsp;"C-f"))</TT>.  It is simply a list of 
+one or more pairs.  Each pair specifies the "from" and "to" events for each 
+translation.
+<DIV class="p"><!----></DIV>Here is another example for Opera users.  <PRE>(add-window-matcher&nbsp;'WM_CLASS&nbsp;"opera"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'(keymap-trans&nbsp;.&nbsp;(("M-f"&nbsp;"C-Right")&nbsp;("M-b"&nbsp;"C-Left"))))
+
+</PRE>
+This overrides the hard-wired shortcuts for the File (M-f) and Bookmark (M-b) 
+menus.  The bindings are then translated to C-Right and C-Left, respectively.  
+This makes them move the cursor forwards and backwards by a word at a time.  
+Emacs users should appreciate the added consistency. 
+<H2><A name="tth_sEc6">6</A>&nbsp;&nbsp;Conclusion</H2>Sawfish has a ton more 
+possible bindings.  I'm sure you will want to review them and locate any that 
+will make your work faster.  Also of note is the "Library" at the sawfish wiki 
+where you can find (and contribute!) extensions that make it work in new and 
+(hopefully!) better ways. 
+<DIV class="p"><!----></DIV>Please email me with any suggestions, criticisms or 
+other ideas.
+<DIV class="p"><!----></DIV>
+<H2><A name="tth_sEc7">7</A>&nbsp;&nbsp;Links</H2>
+<DIV class="p"><!----></DIV>
+<UL>
+  <LI>This paper's homepage - <A href="http://twistedmatrix.com/~teratorn/better_wm/about.html"><TT>http://twistedmatrix.com/~teratorn/better_wm/about.html</TT></A>
+  <DIV class="p"><!----></DIV></LI>
+  <LI>The sawfish window manager - <A 
+  href="http://sawmill.sourceforge.net/"><TT>http://sawmill.sourceforge.net/</TT></A>
+  <DIV class="p"><!----></DIV></LI>
+  <LI>Sawfish wiki - lots of good info here - <A href="http://sawfish.uberstyle.net/index.php/SawfishWiki/SawfishWiki"><TT>http://sawfish.uberstyle.net/index.php/SawfishWiki/SawfishWiki</TT></A>
+  <DIV class="p"><!----></DIV></LI>
+  <LI>Ewan Mellor's sawfish modules - <A href="http://www.ewanmellor.org.uk/sawfish.html"><TT>http://www.ewanmellor.org.uk/sawfish.html</TT></A>
+  <DIV class="p"><!----></DIV></LI>
+  <LI>The xkeycaps program - <A 
+  href="http://www.jwz.org/xkeycaps/"><TT>http://www.jwz.org/xkeycaps/</TT></A>
+  <DIV class="p"><!----></DIV></LI></UL>
+<DIV class="p"><!----></DIV>
+<HR>
+
+<H3>Footnotes:</H3>
+<DIV class="p"><!----></DIV><A name="tthFtNtAAB"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAB"><SUP>1</SUP></A>A 
+window manager handles placing windows on your screen, and resizing them, and so 
+on.  A WM is also the first user program to handle mouse and keyboard input, and 
+thus is in a position to control things such as your mp3 player or launching 
+programs
+<DIV class="p"><!----></DIV><A name="tthFtNtAAC"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAC"><SUP>2</SUP></A>"key 
+bindings" or just "bindings" are the set of keystrokes you use to control a 
+given software program.  Bindings are commonly abbreviated.  M-d, for example, 
+means push "Meta" and "d" at the same time.  The Meta key is just the 1st 
+modifier key defined by xmodmap ("mod1").
+<DIV class="p"><!----></DIV><A name="tthFtNtAAD"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAD"><SUP>3</SUP></A>mouse-ware 
+- software that uses a mouse interface where a keyboard interface would be 
+faster/better.
+<DIV class="p"><!----></DIV><A name="tthFtNtAAE"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAE"><SUP>4</SUP></A>If 
+you know how to use a modifier key by itself please tell me.
+<DIV class="p"><!----></DIV><A name="tthFtNtAAF"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAF"><SUP>5</SUP></A>"emacs 
+bindings" refer to the basic text editing keystrokes made famous by the emacs 
+program.  For example, using these bindings you would push C-a instead of Home, 
+and M-d to delete a whole word.  Since all good UNIX software can be made to 
+support "emacs bindings" it is advantageous to learn them well, even if you 
+later go on to use a vi-style text editor.
+<DIV class="p"><!----></DIV><A name="tthFtNtAAG"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAG"><SUP>6</SUP></A>To 
+get there, middle-click on empty desktop space and click Customize then click 
+Bindings.
+<DIV class="p"><!----></DIV><A name="tthFtNtAAH"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAH"><SUP>7</SUP></A>See 
+the xmms extension on the sawfish wiki library (see "Links" section).
+<DIV class="p"><!----></DIV><A name="tthFtNtAAI"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAI"><SUP>8</SUP></A>X-Chat 
+is GTK2 based.  You can turn on emacs bindings for GTK2 apps by adding the line
+<DIV class="p"><!----></DIV><TT>gtk-key-theme-name = "Emacs"
+<DIV class="p"><!----></DIV>  to your <TT><FONT face="symbol"> ~ 
+</FONT>/.gtkrc-2.0 file.</TT></TT>
+<DIV class="p"><!----></DIV><A name="tthFtNtAAJ"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefAAJ"><SUP>9</SUP></A>I 
+would like to give credit for this code, but it was posted anonymously to the 
+sawfish mailing list.
+<DIV class="p"><!----></DIV><A name="tthFtNtABA"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefABA"><SUP>10</SUP></A>Each 
+window has a class string that should always be unique to the application.
+<DIV class="p"><!----></DIV><A name="tthFtNtABB"></A><A href="http://twistedmatrix.com/~teratorn/better_wm/better_wm.html#tthFrefABB"><SUP>11</SUP></A>Middle 
+click on empty desktop space, click Customize, then click Matched Windows.  Now 
+click Add, then select Class from the first pulldown menu.  Then click the first 
+Grab button.  Click on the window you want to get the class of.  Copy the string 
+that is shown.<BR><BR>
+<HR>
+<SMALL>File translated from T<SUB><FONT size="-1">E</FONT></SUB>X by <A href="http://hutchinson.belmont.ma.us/tth/">
+T<SUB><FONT size="-1">T</FONT></SUB>H</A>, version 3.67.<BR>On 17 Apr 2006, 
+12:48.</SMALL></BODY></HTML>
