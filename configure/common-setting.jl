@@ -24,24 +24,24 @@
 ;;wm modifier value
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
-;;set backgound
-(setq list-wallpaper '("black.png" "ubuntu-12-04.png" "grass.jpg"))
-
 ;;set start program
-(define startup-programs  
-  (list
-    ;'("gnome-panel")
-    '("nm-applet")
-    '("bluetooth-applet")
-    '("xscreensaver" "-no-splash")
-    '("/usr/lib/vino/vino-server" "--sm-disable")           ;;for remote desktop
-    '("gnome-settings-daemon")                              ;;for ubuntu 11.04 use gtk
-    '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
-    '("ibus-daemon" "--xim")                                ;;input method
-    '("numlockx" "on")
-    ;; wallpaper setting
-    (list "feh"  "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 2 list-wallpaper)))
+(define startup-programs
+  '(
+    ;("gnome-panel")
+    ;("bluetooth-applet")
+    ;("nm-applet")
+    ("xscreensaver" "-no-splash")
+    ("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
+    ("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
+    ("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+    ("ibus-daemon" "--xim")                                  ;;input method
+    ("numlockx" "on")
     ))
+
+;;wallpaper setting
+(setq list-wallpaper '("black.png" "ubuntu-12-04.png" "grass.jpg"))
+(setq startup-programs
+      (cons (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 2 list-wallpaper))) startup-programs))
 
 (add-hook 'before-exit-hook  
           (lambda ()  
