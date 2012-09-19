@@ -48,6 +48,7 @@
            "b"    '(jump-or-exec "Beyond Compare" "bcompare")           
            "g"    '(jump-or-exec "Geany" "geany" t)
            "G"    '(jump-or-exec "GPRename" "gprename" nil)
+           "r"    '(jump-or-exec "Remmina" "remmina")
            
            "F2"   '(system "gksu &")
            "C-F2" 'run-application
