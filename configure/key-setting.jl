@@ -49,6 +49,7 @@
            "g"    '(jump-or-exec "Geany" "geany" t)
            "G"    '(jump-or-exec "GPRename" "gprename" nil)
            "r"    '(jump-or-exec "Remmina" "remmina")
+           "C-e"  '(system "evince &")
            
            "F2"   '(system "gksu &")
            "C-F2" 'run-application
