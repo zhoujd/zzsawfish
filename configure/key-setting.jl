@@ -41,7 +41,7 @@
 (define exec-keymap (make-keymap))
 (bind-keys global-keymap "W-e" exec-keymap)
 (bind-keys exec-keymap
-           "e"  'jump-or-exec-emacs
+           "e"    'jump-or-exec-emacs
            "t"    '(system "gnome-terminal &")
            "n"    '(system "nautilus --no-desktop ~ &")
            "f"    '(jump-or-exec "Firefox" "firefox" #:match-class t)
