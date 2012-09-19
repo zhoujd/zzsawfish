@@ -21,8 +21,8 @@
 
 ;;set frame default style
 ;(custom-set-typed-variable (quote Crux:normal-color) (quote "#ca0064003b00") (quote (optional color)))
-(custom-set-typed-variable (quote default-frame-style) (quote Crux) (quote frame-style))
-;(custom-set-typed-variable (quote default-frame-style) (quote pager) (quote frame-style))
+;(custom-set-typed-variable (quote default-frame-style) (quote Crux) (quote frame-style))
+(custom-set-typed-variable (quote default-frame-style) (quote pager) (quote frame-style))
 
 ;;wm modifier value
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
