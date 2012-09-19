@@ -66,17 +66,7 @@
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
 
-(setq root-menu
-      '(("_Windows"    . window-menu)
-        ("Workspaces"  . workspace-menu)
-        ("_Programs"   . apps-menu)
-        ("_Customize"  . custom-menu)
-        ("_About..."   (customize 'about))
-        ()
-        ("_Restart"    restart)
-        ("_Quit"       quit)))
-
- (setq  root-menu
+(setq  root-menu
     `((,(_ "_Windows") . window-menu)
       (,(_ "Work_spaces") . workspace-menu)
       (,(_ "_Programs") . apps-menu)
@@ -92,19 +82,19 @@
       (,(_ "_Quit") quit)))
 
 (setq apps-menu  
-      '(("_Terminal"   (system "gnome-terminal &"))  
-        ("_Emacs"      (system "emacs &"))  
-        ("_Firefox"    (system "firefox &"))  
-        ("_Bcompare"   (system "bcompare &"))
-        ("_Nautilus"   (system "nautilus --no-desktop ~ &"))
-        ("_Evince"     (system "evince &"))
-        ("_Monitor"    (system "gnome-system-monitor &"))
-        ("_Gcolor2"    (system "gcolor2 &"))  
-        ("_Gcalctool"  (system "gcalctool &"))
-        ("_Capture"    (popup-menu capture-menu))  
+      `((,(_ "_Terminal\t\tW-e t")   (system "gnome-terminal &"))  
+        (,(_ "_Emacs\t\t\tW-e e")    (system "emacs &"))  
+        (,(_ "_Firefox\t\tW-e f")    (system "firefox &"))  
+        (,(_ "_Bcompare\t\tW-e b")   (system "bcompare &"))
+        (,(_ "_Nautilus\t\tW-e n")   (system "nautilus --no-desktop ~ &"))
+        (,(_ "_Evince")              (system "evince &"))
+        (,(_ "_Monitor\t\tW-e m")    (system "gnome-system-monitor &"))
+        (,(_ "_Gcolor2")             (system "gcolor2 &"))  
+        (,(_ "_Gcalctool")           (system "gcalctool &"))
+        (,(_ "_Capture")             (popup-menu capture-menu))  
         ()
-        ("_Run"        (system "gmrun &"))
-        ("_Lock"       (system "xscreensaver-command -lock &"))
+        (,(_ "_Run")                 (system "gmrun &"))
+        (,(_ "_Lock")                (system "xscreensaver-command -lock &"))
         ))
 
 
