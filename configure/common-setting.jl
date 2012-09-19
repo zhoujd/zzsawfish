@@ -21,8 +21,8 @@
 
 ;;set frame default style
 ;(custom-set-typed-variable (quote Crux:normal-color) (quote "#ca0064003b00") (quote (optional color)))
-;(custom-set-typed-variable (quote default-frame-style) (quote Crux) (quote frame-style))
-(custom-set-typed-variable (quote default-frame-style) (quote pager) (quote frame-style))
+(custom-set-typed-variable (quote default-frame-style) (quote Crux) (quote frame-style))
+;(custom-set-typed-variable (quote default-frame-style) (quote pager) (quote frame-style))
 
 ;;wm modifier value
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
@@ -34,13 +34,13 @@
     ;("bluetooth-applet")
     ;("nm-applet")
     ;("xeyes")
+    ;("xclock")
     ("xscreensaver" "-no-splash")
     ("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
     ("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
     ("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
     ("ibus-daemon" "--xim")                                  ;;input method
     ("numlockx" "on")
-    ("xclock")
     ))
 
 ;;wallpaper setting
