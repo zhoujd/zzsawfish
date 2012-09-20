@@ -91,7 +91,7 @@
         (,(_ "_Evince")          (system "evince &"))
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
         (,(_ "_Tool")
-         (,(_ "_Gcolor2 	")   (system "gcolor2 &"))  
+         (,(_ "_Gcolor2")        (system "gcolor2 &"))  
          (,(_ "_Gcalctool")      (system "gcalctool &")))
         (,(_ "_Capture")
          (,(_ "_Current Window") (capture-this-window))  
