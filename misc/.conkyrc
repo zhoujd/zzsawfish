@@ -44,7 +44,7 @@ own_window no
 double_buffer yes
 
 # Minimum size of text area
-minimum_size 1000 5
+minimum_size 200 5
 
 # Draw shades?
 draw_shades yes
@@ -53,7 +53,8 @@ draw_shades yes
 draw_outline no
 
 # Draw borders around text
-draw_borders no
+# zhoujd
+draw_borders yes
 
 # Stippled borders?
 stippled_borders 8
@@ -77,8 +78,9 @@ alignment top_left
 
 # Gap between borders of screen and text
 # same thing as passing -x at command line
-gap_x 450
-gap_y 1
+# zhoujd
+gap_x 1200
+gap_y 50
 
 # Subtract file system buffers from used memory?
 no_buffers yes
