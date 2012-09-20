@@ -42,6 +42,7 @@
     ("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
     ("ibus-daemon" "--xim")                                  ;;input method
     ("numlockx" "on")
+    ("conky")
     ))
 
 ;;wallpaper setting
