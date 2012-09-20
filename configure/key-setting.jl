@@ -31,7 +31,7 @@
 
            "W-Menu"  'popup-window-menu
            "C-Menu"  'popup-root-menu
-           "S-Menu"  'popup-apps-menu
+           "M-Menu"  'popup-apps-menu
            
            "W-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
            "W-l"     '(system "xscreensaver-command -lock &")
@@ -45,7 +45,8 @@
            "t"    '(system "gnome-terminal &")
            "n"    '(system "nautilus --no-desktop ~ &")
            "f"    '(jump-or-exec "Firefox" "firefox" #:match-class t)
-           "b"    '(jump-or-exec "Beyond Compare" "bcompare")           
+           "b"    '(jump-or-exec "Beyond Compare" "bcompare")
+           "C-b"  '(system "bcompare &")
            "g"    '(jump-or-exec "Geany" "geany" t)
            "G"    '(jump-or-exec "GPRename" "gprename" nil)
            "r"    '(jump-or-exec "Remmina" "remmina")

@@ -85,7 +85,7 @@
       `((,(_ "_Terminal")        (system "gnome-terminal &"))  
         (,(_ "_Emacs")           (system "emacs &"))  
         (,(_ "_Firefox")         (system "firefox &"))  
-        (,(_ "_Beyond compare")  (system "bcompare &"))
+        (,(_ "_Beyond Compare")  (system "bcompare &"))
         (,(_ "_Nautilus")        (system "nautilus --no-desktop ~ &"))
         (,(_ "_Remmina")         (system "remmina &"))
         (,(_ "_Evince")          (system "evince &"))
