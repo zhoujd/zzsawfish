@@ -50,7 +50,8 @@
       (cons (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 2 list-wallpaper))) startup-programs))
 
 ;;system info show
-(setq startup-programs (cons (list "conky" (format nil "-x %d" (- (screen-width) 420)))))
+(setq startup-programs (cons (list "conky" (format nil "-x %d" (- (screen-width) 420)))
+                             startup-programs))
 
 (add-hook 'before-exit-hook  
           (lambda ()  
