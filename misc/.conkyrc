@@ -54,7 +54,7 @@ draw_outline no
 
 # Draw borders around text
 # zhoujd
-draw_borders yes
+draw_borders no
 
 # Stippled borders?
 stippled_borders 8
@@ -79,7 +79,7 @@ alignment top_left
 # Gap between borders of screen and text
 # same thing as passing -x at command line
 # zhoujd
-gap_x 1200
+gap_x 1500
 gap_y 50
 
 # Subtract file system buffers from used memory?

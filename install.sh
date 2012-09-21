@@ -20,4 +20,8 @@ echo ";;;this is .sawfishrc for zhoujd.">> ~/.sawfishrc
 echo "(defvar zzsawfish-path \"${ZZSAWFISH_ROOT}/\")" >> ~/.sawfishrc
 echo "(load-file (concat zzsawfish-path \".sawfishrc\"))" >> ~/.sawfishrc
 
+##install conkyrc
+ln -s ${ZZSAWFISH_ROOT}/misc/.conkyrc ~/.conkyrc
+
+
 echo "install sawfish end ..."
