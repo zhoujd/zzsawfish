@@ -10,7 +10,7 @@ case "$answer" in
         sudo apt-get install -y sawfish sawfish-data sawfish-dbg sawfish-lisp-source sawfish-merlin-ugliness sawfish-themes sawfish-pager
         sudo apt-get install -y gnome-panel xscreensaver gmrun gcolor2 gcalctool libimlib2 
         sudo apt-get install -y numlockx  imagemagick remmina geany gtkorphan gprename rcconf
-        sudo apt-get install -y feh fbpanel gkrellm conky
+        sudo apt-get install -y feh fbpanel gkrellm conky-all
 esac
 
 ##setup .sawfishrc
