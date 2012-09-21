@@ -45,9 +45,9 @@
     ))
 
 ;;wallpaper setting
-(setq list-wallpaper '("black.png" "ubuntu-12-04.png" "grass.jpg"))
+(setq list-wallpaper '("black.png" "ubuntu.png" "grass.jpg" "1920x1080.jpg" "1600x900.jpg" "moon.jpg"))
 (setq startup-programs
-      (cons (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 2 list-wallpaper))) startup-programs))
+      (cons (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper))) startup-programs))
 
 ;;system info show
 (setq startup-programs (cons (list "conky"
