@@ -304,8 +304,8 @@ TEXT
 ${offset 240}${color slate grey}${time %a,   } ${color }${time %e  %B  %G}
 ${offset 240}${color slate grey}${time %Z,   }${color }${time %H:%M:%S}
 ${offset 240}${color slate grey}UpTime: ${color }$uptime
-${offset 240}${color slate grey}Kern:${color }$kernel
-${offset 240}${color slate grey}CPU:${color } $cpu% ${acpitemp}C
+${offset 240}${color slate grey}Kern: ${color }$kernel
+${offset 240}${color slate grey}CPU: ${color } $cpu% ${acpitemp}C
 ${offset 240}${cpugraph 20,150 000000 ffffff}
 ${offset 240}${color slate grey}Load: ${color }$loadavg
 ${offset 240}${color slate grey}Processes: ${color }$processes  
@@ -328,7 +328,7 @@ ${offset 240}${membar 3,150}
 ${offset 240}${color slate grey}SWAP: ${color }$swapperc% $swap/$swapmax
 ${offset 240}${swapbar 3,150}
 
-${offset 240}${color slate grey}ROOT:    ${color }${fs_free /}/${fs_size /}
+${offset 240}${color slate grey}ROOT:   ${color }${fs_free /}/${fs_size /}
 ${offset 240}${fs_bar 3,150 /}
 ${offset 240}${color slate grey}HOME:  ${color }${fs_free /home}/${fs_size /home}
 ${offset 240}${fs_bar 3,150 /home}
