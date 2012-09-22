@@ -45,15 +45,16 @@
     ))
 
 ;;wallpaper setting
-(setq list-wallpaper '("black.png" "ubuntu.png" "grass.jpg" "1920x1080.jpg" "1600x900.jpg" "moon.jpg"))
-(setq startup-programs
-      (cons (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper))) startup-programs))
 
 ;;system info show
-(setq startup-programs (cons (list "conky"
-                                   (format nil "-x %d" (- (screen-width) 400))
-                                   (format nil "-y %d" (- (screen-height) 600)))
-                             startup-programs))
+(setq startup-programs
+      (nconc startup-programs
+             (list
+              (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper))) 
+              (list "conky"
+                    (format nil "-x %d" (- (screen-width) 400))
+                    (format nil "-y %d" (- (screen-height) 600))))))
+
 
 (add-hook 'before-exit-hook  
           (lambda ()  
