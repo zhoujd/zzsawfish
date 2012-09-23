@@ -29,7 +29,8 @@
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
 ;;wallpaper setting
-(setq list-wallpaper '("black.png" "ubuntu.png" "grass.jpg" "1920x1080.jpg" "1600x900.jpg" "moon.jpg"))
+(setq list-wallpaper '("black.png" "sand.png"   "grass.jpg"  "grid.jpg"
+                       "red.jpg"   "summer.jpg" "yellow.jpg" "moon.jpg"))
 
 ;;set start program
 (define startup-programs
@@ -47,7 +48,7 @@
     '("numlockx" "on")
 
     ;;wallpaper setting
-    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
+    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 5 list-wallpaper)))
     ;;system info show
     (list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
     ))
