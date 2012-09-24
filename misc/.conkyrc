@@ -301,7 +301,7 @@ TEXT
 
 
 
-${offset 240}${color slate grey}${time %a,   } ${color }${time %e  %B  %G}
+${offset 240}${color slate grey}${time %a,   }${color }${time %e %B %G}
 ${offset 240}${color slate grey}${time %Z,   }${color }${time %H:%M:%S}
 ${offset 240}${color slate grey}UpTime: ${color }$uptime
 ${offset 240}${color slate grey}Kern: ${color }$kernel
