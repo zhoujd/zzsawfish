@@ -48,9 +48,9 @@
     '("numlockx" "on")
 
     ;;wallpaper setting
-    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 5 list-wallpaper)))
+    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
     ;;system info show
-    (list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
+    ;(list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
     ))
 
 (add-hook 'before-exit-hook  
@@ -94,7 +94,7 @@
         (,(_ "_Remmina")         (system "remmina &"))
         (,(_ "_Evince")          (system "evince &"))
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
-        (,(_ "_Tool")
+        (,(_ "_Tools")
          (,(_ "_Gnome Control Center")  (system "gnome-control-center &")) 
          (,(_ "_Gcolor2")               (system "gcolor2 &"))  
          (,(_ "_Gcalctool")             (system "gcalctool &")))
