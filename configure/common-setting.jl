@@ -11,6 +11,8 @@
 (require 'sawfish.wm.focus)
 (require 'sawfish.wm.ext.match-window)
 (require 'shutdown)
+(require 'focus-by-direction)
+(require 'jumper)
 
 (setq capture-menu  
       '(("Current Window"  (capture-this-window))  
