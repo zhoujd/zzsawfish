@@ -37,23 +37,23 @@
 ;;set start program
 (define startup-programs
   (list
-    ;'("gnome-panel")
-    ;'("bluetooth-applet")
-    ;'("nm-applet")
-    ;'("xeyes")
-    ;'("xclock")
-    '("xscreensaver" "-no-splash")
-    '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
-    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
-    '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
-    '("ibus-daemon" "--xim")                                  ;;input method
-    '("numlockx" "on")
+   ;'("gnome-panel")
+   ;'("bluetooth-applet")
+   ;'("nm-applet")
+   ;'("xeyes")
+   ;'("xclock")
+   '("xscreensaver" "-no-splash")
+   '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
+   '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
+   '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+   '("ibus-daemon" "--xim")                                  ;;input method
+   '("numlockx" "on")
 
-    ;;wallpaper setting
-    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
-    ;;system info show
-    ;(list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
-    ))
+   ;;wallpaper setting
+   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
+   ;;system info show
+   ;(list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
+   ))
 
 (add-hook 'before-exit-hook  
           (lambda ()  
@@ -112,5 +112,4 @@
 
 (provide 'common-setting)
 ;;; common-setting.jl end here
-(screen-width)
 
