@@ -42,10 +42,9 @@
    ;'("nm-applet")
    ;'("xeyes")
    ;'("xclock")
-   '("xscreensaver" "-no-splash")
+   ;'("xscreensaver" "-no-splash")
    '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
-   '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
 
@@ -97,7 +96,8 @@
         (,(_ "_Evince")          (system "evince &"))
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
         (,(_ "_Tools")
-         (,(_ "_Gnome Control Center")  (system "gnome-control-center &")) 
+         (,(_ "_Gnome Control Center")  (system "gnome-control-center &"))
+         (,(_ "_Sound Control")         (system  (program-term "alsamixer")))
          (,(_ "_Gcolor2")               (system "gcolor2 &"))  
          (,(_ "_Gcalctool")             (system "gcalctool &")))
         (,(_ "_Capture")
@@ -108,7 +108,6 @@
         (,(_ "_Run")             (system "gmrun &"))
         (,(_ "_Lock")            (system "xscreensaver-command -lock &"))
         ))
-
 
 (provide 'common-setting)
 ;;; common-setting.jl end here
