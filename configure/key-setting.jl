@@ -50,6 +50,8 @@
            "g"    '(jump-or-exec "Geany" "geany" t)
            "G"    '(jump-or-exec "GPRename" "gprename" nil)
            "r"    '(jump-or-exec "Remmina" "remmina")
+           "m"    '(system "gnome-system-monitor &")
+           "s"    '(system "gnome-control-center &")
            "C-e"  '(system "evince &")
            
            "F2"   '(system "gksu &")

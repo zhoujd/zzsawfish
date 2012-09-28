@@ -11,6 +11,8 @@
 (require 'sawfish.wm.focus)
 (require 'sawfish.wm.ext.match-window)
 (require 'shutdown)
+(require 'focus-by-direction)
+(require 'jumper)
 
 (setq capture-menu  
       '(("Current Window"  (capture-this-window))  
@@ -35,23 +37,23 @@
 ;;set start program
 (define startup-programs
   (list
-    ;'("gnome-panel")
-    ;'("bluetooth-applet")
-    ;'("nm-applet")
-    ;'("xeyes")
-    ;'("xclock")
-    '("xscreensaver" "-no-splash")
-    '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
-    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
-    '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
-    '("ibus-daemon" "--xim")                                  ;;input method
-    '("numlockx" "on")
+   ;'("gnome-panel")
+   ;'("bluetooth-applet")
+   ;'("nm-applet")
+   ;'("xeyes")
+   ;'("xclock")
+   '("xscreensaver" "-no-splash")
+   '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
+   '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
+   '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+   '("ibus-daemon" "--xim")                                  ;;input method
+   '("numlockx" "on")
 
-    ;;wallpaper setting
-    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
-    ;;system info show
-    (list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
-    ))
+   ;;wallpaper setting
+   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
+   ;;system info show
+   ;(list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
+   ))
 
 (add-hook 'before-exit-hook  
           (lambda ()  
@@ -94,9 +96,10 @@
         (,(_ "_Remmina")         (system "remmina &"))
         (,(_ "_Evince")          (system "evince &"))
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
-        (,(_ "_Tool")
-         (,(_ "_Gcolor2")        (system "gcolor2 &"))  
-         (,(_ "_Gcalctool")      (system "gcalctool &")))
+        (,(_ "_Tools")
+         (,(_ "_Gnome Control Center")  (system "gnome-control-center &")) 
+         (,(_ "_Gcolor2")               (system "gcolor2 &"))  
+         (,(_ "_Gcalctool")             (system "gcalctool &")))
         (,(_ "_Capture")
          (,(_ "_Current Window") (capture-this-window))  
          (,(_ "_Region")         (capture-region))  
@@ -109,5 +112,4 @@
 
 (provide 'common-setting)
 ;;; common-setting.jl end here
-(screen-width)
 
