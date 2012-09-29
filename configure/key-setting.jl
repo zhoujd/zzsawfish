@@ -16,11 +16,8 @@
            "W-TAB"   'cycle-windows
            "W-Right" 'next-workspace
            "W-Left"  'previous-workspace
-           "W-Down"  'lower-window
-           "W-Up"    'raise-window
 
            ;;window 
-           "W-F1"    'popup-root-menu
            "W-F2"    '(system "gmrun &")
            "W-F3"    '(show-desktop-toggle)
            "W-F4"    '(delete-window (current-event-window))
