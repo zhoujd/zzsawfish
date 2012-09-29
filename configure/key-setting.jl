@@ -14,8 +14,6 @@
 
 (bind-keys global-keymap
            "W-TAB"   'cycle-windows
-           "W-Right" 'next-workspace
-           "W-Left"  'previous-workspace
 
            ;;window 
            "W-F2"    '(system "gmrun &")
@@ -102,6 +100,11 @@
            "W-\\"        'maximize-window-horizontally-toggle
 
            "W-Return"    'maximize-window-fullscreen-toggle
+
+           "W-Left"      'focus-east
+           "W-Right"     'focus-west
+           "W-Up"        'focus-north
+           "W-Down"      'focus-south
            )
 
 (define help-keymap (make-keymap))
