@@ -14,6 +14,7 @@
 
 (bind-keys global-keymap
            "W-TAB"   'cycle-windows
+           "W-`"     'iswitch-window
 
            ;;window 
            "W-F2"    '(system "gmrun &")
@@ -22,8 +23,6 @@
 
            "W-F9"    '(system (program-term "sawfish-client"))
            "W-F10"   '(maximize-window-toggle (current-event-window))
-           
-           "W-`"     'iswitch-window
 
            "W-Menu"  'popup-window-menu
            "C-Menu"  'popup-root-menu
