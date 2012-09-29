@@ -4,14 +4,6 @@
 ;;zzsawfish home
 (defvar zzsawfish-path "~/zzsawfish/")
 
-;;help out bind W-F9 for restart sawfish
-(defun program-term (name)
-  "Start a gnome-terminal with an command session"
-  (interactive)
-  (system (format nil "gnome-terminal --name=%s -t %s -x %s &" name name name)))
-
-(bind-keys global-keymap "W-F9" '(system (program-term "sawfish-client")))
-
 ;;add load-path
 (setq load-path 
      (append (list

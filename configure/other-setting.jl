@@ -89,5 +89,12 @@
                 (lambda (wind)          ; When already focused
                   (display-window wind))))
 
+;;help out bind W-F9 for restart sawfish
+(defun program-term (name)
+  "Start a gnome-terminal with an command session"
+  (interactive)
+  (system (format nil "gnome-terminal --name=%s -t %s -x %s &" name name name)))
+
+
 (provide 'other-setting)
 ;;; other-setting.jl end here
