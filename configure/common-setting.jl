@@ -97,6 +97,7 @@
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
         (,(_ "_Tools")
          (,(_ "_Gnome Control Center")  (system "gnome-control-center &"))
+         (,(_ "_Gconf-editor")          (system "gconf-editor &"))
          (,(_ "_Sound Control")         (system  (program-term "alsamixer")))
          (,(_ "_Gcolor2")               (system "gcolor2 &"))  
          (,(_ "_Gcalctool")             (system "gcalctool &")))
