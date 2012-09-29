@@ -93,17 +93,18 @@
            "W-="         'maximize-window-toggle
            "W-BackSpace" 'toggle-window-shaded
 
-           "W-Return"    'maximize-window-fullscreen-toggle
+           "W-_"         'move-window-interactively
+           "W-+"         'resize-window-interactively
+
            "W-]"         'raise-window
            "W-["         'lower-window
            "W-}"         'raise-window-depth
            "W-{"         'lower-window-depth
-
-           "W-|"         'move-window-interactively
-           "W-\\"        'resize-window-interactively
            
-           "W-;"         'maximize-window-vertically
-           "W-'"         'maximize-window-horizontally
+           "W-|"         'maximize-window-vertically-toggle
+           "W-\\"        'maximize-window-horizontally-toggle
+
+           "W-Return"    'maximize-window-fullscreen-toggle
            )
 
 (define help-keymap (make-keymap))
