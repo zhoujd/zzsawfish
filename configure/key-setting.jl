@@ -27,7 +27,7 @@
 
            "W-F10"   '(maximize-window-toggle (current-event-window))
 
-           "W-0"     'iswitch-window
+           "W-`"     'iswitch-window
 
            "W-Menu"  'popup-window-menu
            "C-Menu"  'popup-root-menu
