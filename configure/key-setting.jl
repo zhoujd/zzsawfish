@@ -22,7 +22,7 @@
            "W-F4"    '(delete-window (current-event-window))
 
            "W-F9"    '(system (program-term "sawfish-client"))
-           "W-F10"   '(maximize-window-toggle (current-event-window))
+           "W-F10"   'open/close-gnome-panel
 
            "W-Menu"  'popup-window-menu
            "C-Menu"  'popup-root-menu
