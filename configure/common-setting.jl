@@ -60,9 +60,9 @@
    '("numlockx" "on")
 
    ;;wallpaper setting
-   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
+   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
    ;;system info show
-   ;(list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
+   (list "conky" (format nil "-x %d" (- (screen-width) 170)) (format nil "-y %d" (- (screen-height) 600)))
    ))
 
 (add-hook 'before-exit-hook  
