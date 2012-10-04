@@ -44,7 +44,18 @@
    ;'("xclock")
    ;'("xscreensaver" "-no-splash")
    '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
+   '("/usr/lib/gnome-user-share/gnome-user-share")
+   '("/usr/lib/gnome-disk-utility/gdu-notification-daemon")
+   
    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
+   '("gnome-power-manager")
+   '("gsettings-data-convert")
+   
+   '("/usr/bin/gnome-keyring-daemon --start --components=pkcs11")
+   '("/usr/bin/gnome-keyring-daemon --start --components=secrets")
+   '("/usr/bin/gnome-keyring-daemon --start --components=ssh")
+   
+   '("start-pulseaudio-x11")
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
 
