@@ -44,25 +44,21 @@
    ;'("xclock")
    ;'("xscreensaver" "-no-splash")
    '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
-   '("/usr/lib/gnome-user-share/gnome-user-share")
-   '("/usr/lib/gnome-disk-utility/gdu-notification-daemon")
    
    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
    '("gnome-power-manager")
-   '("gsettings-data-convert")
    
    '("/usr/bin/gnome-keyring-daemon --start --components=pkcs11")
    '("/usr/bin/gnome-keyring-daemon --start --components=secrets")
    '("/usr/bin/gnome-keyring-daemon --start --components=ssh")
    
-   '("start-pulseaudio-x11")
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
 
    ;;wallpaper setting
    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
    ;;system info show
-   (list "conky" (format nil "-x %d" (- (screen-width) 170)) (format nil "-y %d" (- (screen-height) 600)))
+   ;(list "conky" (format nil "-x %d" (- (screen-width) 170)) (format nil "-y %d" (- (screen-height) 600)))
    ))
 
 (add-hook 'before-exit-hook  
