@@ -97,6 +97,7 @@
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
         (,(_ "_Tools")
          (,(_ "_Gnome Control Center")  (system "gnome-control-center &"))
+         (,(_ "_Gnome Panel")           (open/close-gnome-panel))
          (,(_ "_Gconf-editor")          (system "gconf-editor &"))
          (,(_ "_Sound Control")         (system  (program-term "alsamixer")))
          (,(_ "_Gcolor2")               (system "gcolor2 &"))  
@@ -112,4 +113,3 @@
 
 (provide 'common-setting)
 ;;; common-setting.jl end here
-
