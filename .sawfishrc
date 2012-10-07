@@ -11,6 +11,12 @@
               (concat zzsawfish-path "configure"))
               load-path))
 
+;;add dl-load-path
+(setq dl-load-path 
+     (append (list
+              (concat zzsawfish-path "lib"))
+              dl-load-path))
+
 ;;add theme-load-path
 (setq theme-load-path 
       (append (list

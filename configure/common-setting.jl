@@ -78,6 +78,10 @@
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
 
+;; display grid when moving/resizing
+(setq move-outline-mode 'box)
+(setq resize-outline-mode 'box)
+
 (setq  root-menu
     `((,(_ "_Windows")    .  window-menu)
       (,(_ "Work_spaces") .  workspace-menu)
@@ -105,7 +109,7 @@
         (,(_ "_Tools")
          (,(_ "_Gnome Control Center")  (system "gnome-control-center &"))
          (,(_ "_Gnome Panel")           (open/close-gnome-panel))
-         (,(_ "_Gconf-editor")          (system "gconf-editor &"))
+         (,(_ "_Gconf Editor")          (system "gconf-editor &"))
          (,(_ "_Sound Control")         (system  (program-term "alsamixer")))
          (,(_ "_Gcolor2")               (system "gcolor2 &"))  
          (,(_ "_Gcalctool")             (system "gcalctool &")))
