@@ -1,3 +1,6 @@
+!
+! run the command xev to get keycode
+!
 
 keycode 133 = Super_L
 keycode 134 = Hyper_R

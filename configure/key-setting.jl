@@ -14,20 +14,15 @@
 
 (bind-keys global-keymap
            "W-TAB"   'cycle-windows
-           "W-Right" 'next-workspace
-           "W-Left"  'previous-workspace
-           "W-Down"  'lower-window
-           "W-Up"    'raise-window
+           "W-`"     'iswitch-window
 
            ;;window 
-           "W-F1"    'popup-root-menu
            "W-F2"    '(system "gmrun &")
            "W-F3"    '(show-desktop-toggle)
            "W-F4"    '(delete-window (current-event-window))
 
-           "W-F10"   '(maximize-window-toggle (current-event-window))
-
-           "W-0"     'iswitch-window
+           "W-F9"    '(system (program-term "sawfish-client"))
+           "W-F10"   'open/close-gnome-panel
 
            "W-Menu"  'popup-window-menu
            "C-Menu"  'popup-root-menu
@@ -35,7 +30,7 @@
            
            "W-Home"  '(jump-or-exec "Nautilus" "nautilus --no-desktop ~" t)
            "W-l"     '(system "xscreensaver-command -lock &")
-           "W-x"     '(system "xkill &"))
+           "W-x"     '(system (program-term "xkill")))
 
 ;;for run special program
 (define exec-keymap (make-keymap))
@@ -88,28 +83,31 @@
            "Down"  '(move-viewport  0  1))
 
 (bind-keys window-keymap
-           "M-F10" 'maximize-window-fullscreen-toggle
-           "W-F4"  'delete-window-safely
-           "W-F5"  'destroy-window
-           "C-W-m" 'maximize-window
-           "C-W-w" 'unmaximize-window
-           "C-W-s" 'shade-window
-           "C-W-u" 'unshade-window
-           "C-W-i" 'iconify-window
-           "C-W-r" 'raise-window
-           "C-W-l" 'lower-window
-           "C-W-R" 'raise-window-depth
-           "C-W-L" 'lower-window-depth
-           "C-W-f" 'maximize-window-fullscreen
-           "C-W-v" 'maximize-window-vertically
-           "C-W-h" 'maximize-window-horizontally
-           "C-W-y" 'move-window-interactively
-           "C-W-x" 'resize-window-interactively
+           "W--"         'iconify-window
+           "W-="         'maximize-window-toggle
+           "W-BackSpace" 'toggle-window-shaded
+
+           "W-_"         'move-window-interactively
+           "W-+"         'resize-window-interactively
+
+           "W-]"         'raise-window
+           "W-["         'lower-window
+           "W-}"         'raise-window-depth
+           "W-{"         'lower-window-depth
+           
+           "W-|"         'maximize-window-vertically-toggle
+           "W-\\"        'maximize-window-horizontally-toggle
+
+           "W-Return"    'maximize-window-fullscreen-toggle
+
+           "W-Left"      'focus-east
+           "W-Right"     'focus-west
+           "W-Up"        'focus-north
+           "W-Down"      'focus-south
            )
 
 (define help-keymap (make-keymap))
 (bind-keys global-keymap "W-h" help-keymap)
-
 
 
 (provide 'key-setting)

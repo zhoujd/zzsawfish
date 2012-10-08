@@ -67,10 +67,10 @@
   "If true, then the script will configure a default set of key
    bindings when loaded")
 
-(defvar jumper-jump-modifier "H"
+(defvar jumper-jump-modifier "W"
   "The modifier(s) to jump to a marked window")
 
-(defvar jumper-mark-modifier "H-A"
+(defvar jumper-mark-modifier "C-W"
   "The modifier(s) to mark a window")
 
 (defvar jumper-keys '(?0 ?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9)

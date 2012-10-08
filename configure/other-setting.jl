@@ -89,5 +89,39 @@
                 (lambda (wind)          ; When already focused
                   (display-window wind))))
 
+;;help out bind W-F9 for restart sawfish
+(defun program-term (name)
+  "Start a gnome-terminal with an command session"
+  (interactive)
+  (system (format nil "gnome-terminal --name=%s -t %s -x %s &" name name name)))
+
+;;;Helper for Screenlets
+;;;Adjust to your needs
+(define (add-screenlets-matcher wm-name pos)
+  (add-window-matcher 'WM_NAME wm-name
+       `(position . ,pos)
+       '(fixed-position . t)
+       '(sticky . t)
+       '(sticky-viewport . t)
+       '(cycle-skip . t)
+       '(depth . -2)
+       '(never-maximize . t)
+       '(never-iconify . t)))
+
+;;for gnome-panel-show/hide
+(defvar gnome-panel-open-flag nil)
+(defun open/close-gnome-panel ()
+  (interactive)
+  (if gnome-panel-open-flag
+      (progn
+        (system "kill -KILL `pidof gnome-panel` &")
+        )
+    (progn
+      (system "gnome-panel &")
+      (system "bluetooth-applet &")
+      (system "nm-applet &")
+      ))
+  (setq gnome-panel-open-flag (not gnome-panel-open-flag)))
+
 (provide 'other-setting)
 ;;; other-setting.jl end here

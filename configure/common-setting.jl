@@ -44,15 +44,21 @@
    ;'("xclock")
    '("xscreensaver" "-no-splash")
    '("/usr/lib/vino/vino-server" "--sm-disable")             ;;for remote desktop
+   
    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
-   '("gnome-keyring-daemon" "--start" "--components=pkcs11") ;;/etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+   '("gnome-power-manager")
+   
+   '("gnome-keyring-daemon --start --components=pkcs11")
+   '("gnome-keyring-daemon --start --components=secrets")
+   '("gnome-keyring-daemon --start --components=ssh")
+   
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
 
    ;;wallpaper setting
-   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 3 list-wallpaper)))
+   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
    ;;system info show
-   ;(list "conky" (format nil "-x %d" (- (screen-width) 400)) (format nil "-y %d" (- (screen-height) 600)))
+   ;(list "conky" (format nil "-x %d" (- (screen-width) 170)) (format nil "-y %d" (- (screen-height) 600)))
    ))
 
 (add-hook 'before-exit-hook  
@@ -71,6 +77,10 @@
 (setq workspace-names     '("work")) 
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
+
+;; display grid when moving/resizing
+(setq move-outline-mode 'box)
+(setq resize-outline-mode 'box)
 
 (setq  root-menu
     `((,(_ "_Windows")    .  window-menu)
@@ -97,7 +107,10 @@
         (,(_ "_Evince")          (system "evince &"))
         (,(_ "_Monitor")         (system "gnome-system-monitor &"))
         (,(_ "_Tools")
-         (,(_ "_Gnome Control Center")  (system "gnome-control-center &")) 
+         (,(_ "_Gnome Control Center")  (system "gnome-control-center &"))
+         (,(_ "_Gnome Panel")           (open/close-gnome-panel))
+         (,(_ "_Gconf Editor")          (system "gconf-editor &"))
+         (,(_ "_Sound Control")         (system  (program-term "alsamixer")))
          (,(_ "_Gcolor2")               (system "gcolor2 &"))  
          (,(_ "_Gcalctool")             (system "gcalctool &")))
         (,(_ "_Capture")
@@ -109,7 +122,5 @@
         (,(_ "_Lock")            (system "xscreensaver-command -lock &"))
         ))
 
-
 (provide 'common-setting)
 ;;; common-setting.jl end here
-
