@@ -77,10 +77,6 @@
 (setq decorate-transients t)
 (setq place-window-mode   'first-fit)
 
-;; display grid when moving/resizing
-(setq move-outline-mode 'box)
-(setq resize-outline-mode 'box)
-
 (setq  root-menu
     `((,(_ "_Windows")    .  window-menu)
       (,(_ "Work_spaces") .  workspace-menu)

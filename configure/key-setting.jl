@@ -100,8 +100,8 @@
 
            "W-Return"    'maximize-window-fullscreen-toggle
 
-           "W-Left"      'focus-east
-           "W-Right"     'focus-west
+           "W-Left"      'focus-west
+           "W-Right"     'focus-east
            "W-Up"        'focus-north
            "W-Down"      'focus-south
            )
