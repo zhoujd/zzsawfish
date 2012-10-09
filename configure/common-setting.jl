@@ -73,8 +73,9 @@
             (mapc stop-process (active-processes))))
 
 (setq apps-menu-autogen   nil)
-(setq workspace-names     '("work")) 
 (setq decorate-transients t)
+
+(setq workspace-names     '("work")) 
 (setq place-window-mode   'first-fit)
 
 (setq  root-menu
