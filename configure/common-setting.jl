@@ -53,7 +53,7 @@
    
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
-
+   '("remmina" "-i")
    ;;wallpaper setting
    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
    ;;system info show
