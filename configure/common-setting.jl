@@ -78,6 +78,33 @@
 (setq workspace-names     '("work")) 
 (setq place-window-mode   'first-fit)
 
+;; Load gnome stuff even if we start before any gnome properties are set.
+(require 'sawfish.wm.state.gnome)
+
+;; Don't load a custom default file; it loses information about which
+;; variables users have set, and it overrides site defaults.
+(setq custom-default-file "/dev/null")
+
+;; Define some of the settings from the sawfish custom default file as
+;; site defaults.  What we left out was a setting to enable tooltips,
+;; to disable showing of tooltip doc strings, and to set the worksapce
+;; geometry to contain four workspaces.
+(setq warp-to-selected-windows nil)
+(setq cycle-warp-pointer nil)
+(setq focus-mode 'click)
+(bind-keys window-keymap "Button1-Click1" 'raise-and-pass-through-click)
+
+;; Focus mode customizations
+(require 'auto-raise)
+(setq focus-windows-on-uniconify t)
+(setq raise-window-timeout 0)
+
+;; Menu customizations
+(require 'sawfish.wm.menus)
+(require 'sawfish.wm.ext.old-window-menu)
+(setq menu-program-stays-running t)
+(menu-start-process)
+
 (setq  root-menu
     `((,(_ "_Windows")    .  window-menu)
       (,(_ "Work_spaces") .  workspace-menu)
