@@ -3,13 +3,14 @@
 ;; Load Modules
 (require 'sawfish-defaults)
 (require 'sawfish.wm.viewport)
+(require 'sawfish.wm.focus)
+(require 'sawfish.wm.ext.match-window)
 (require 'sawfish.wm.menus)
 (require 'iswitch-window)
 (require 'jump-or-exec)
 (require 'run-application)
 (require 'string2)
-(require 'sawfish.wm.focus)
-(require 'sawfish.wm.ext.match-window)
+(require 'auto-raise)
 (require 'shutdown)
 (require 'focus-by-direction)
 (require 'jumper)
@@ -92,16 +93,12 @@
 (setq warp-to-selected-windows nil)
 (setq cycle-warp-pointer nil)
 (setq focus-mode 'click)
-(bind-keys window-keymap "Button1-Click1" 'raise-and-pass-through-click)
 
 ;; Focus mode customizations
-(require 'auto-raise)
 (setq focus-windows-on-uniconify t)
 (setq raise-window-timeout 0)
 
 ;; Menu customizations
-(require 'sawfish.wm.menus)
-(require 'sawfish.wm.ext.old-window-menu)
 (setq menu-program-stays-running t)
 (menu-start-process)
 
