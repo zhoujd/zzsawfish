@@ -15,14 +15,14 @@ esac
 
 ##setup .sawfishrc
 ZZSAWFISH_ROOT=`pwd`
-rm -f ~/.sawfishrc
-echo ";;;this is .sawfishrc for zhoujd.">> ~/.sawfishrc
-echo "(defvar zzsawfish-path \"${ZZSAWFISH_ROOT}/\")" >> ~/.sawfishrc
-echo "(load-file (concat zzsawfish-path \".sawfishrc\"))" >> ~/.sawfishrc
+cat > ~/.sawfishrc <<EOF
+;;;this is .sawfishrc for zhoujd.
+(defvar zzsawfish-path "${ZZSAWFISH_ROOT}/")
+(load-file (concat zzsawfish-path ".sawfishrc"))
+EOF
 
 ##install conkyrc
 rm -f ~/.conkyrc
 ln -s ${ZZSAWFISH_ROOT}/misc/.conkyrc ~/.conkyrc
-
 
 echo "install sawfish end ..."
