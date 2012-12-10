@@ -21,6 +21,10 @@ cat > ~/.sawfishrc <<EOF
 (load-file (concat zzsawfish-path ".sawfishrc"))
 EOF
 
+##git setting
+git config user.name "zhoujd"
+git config user.email "zjd-405@163.com"
+
 ##install conkyrc
 rm -f ~/.conkyrc
 ln -s ${ZZSAWFISH_ROOT}/misc/.conkyrc ~/.conkyrc
