@@ -56,7 +56,7 @@
    '("numlockx" "on")
    '("remmina" "-i")
    ;;wallpaper setting
-   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
+   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 5 list-wallpaper)))
    ;;system info show
    ;(list "conky" (format nil "-x %d" (- (screen-width) 170)) (format nil "-y %d" (- (screen-height) 600)))
    ))
