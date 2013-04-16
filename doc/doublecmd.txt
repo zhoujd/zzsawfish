@@ -1,0 +1,4 @@
+1. Double Commander can be run on several platforms and operating systems including Linux and Windows. It supports 32-bit and 64-bit processors. Double Commander is written in Free Pascal/Lazarus.
+
+http://sourceforge.net/projects/doublecmd/files/
+
