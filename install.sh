@@ -8,7 +8,7 @@ read answer
 case "$answer" in
     "Y" | "y" )
         sudo apt-get install -y sawfish sawfish-data sawfish-dbg sawfish-lisp-source sawfish-merlin-ugliness sawfish-themes
-	sudo apt-get install -y sawfish-pager
+	#sudo apt-get install -y sawfish-pager
         sudo apt-get install -y gnome-panel xscreensaver gmrun gcolor2 gcalctool libimlib2 synaptic gconf-editor eog
         sudo apt-get install -y numlockx  imagemagick remmina geany gtkorphan gprename rcconf
         sudo apt-get install -y feh fbpanel gkrellm conky-all
