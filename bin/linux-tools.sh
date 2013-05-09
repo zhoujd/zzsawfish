@@ -2,8 +2,11 @@
 
 echo "Install linux tools begin ..."
 
+##remove unused software
+sudo apt-get remove totem totem-gstreamer totem-mozilla --force-yes  -y
+sudo apt-get remove rhythmbox evolution bittorrent empathy --force-yes  -y
+
 ##video player
-sudo apt-get remove totem*
 sudo apt-get install vlc
 
 sudo apt-get install samba
