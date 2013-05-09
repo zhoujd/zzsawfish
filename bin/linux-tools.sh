@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Install linux tools begin ..."
+
 ##video player
 sudo apt-get remove totem*
 sudo apt-get install vlc
@@ -37,4 +39,6 @@ sudo apt-get install fcitx
 sudo apt-get install fcitx-googlepinyin
 sudo apt-get install fcitx-sunpinyin
 sudo apt-get install fcitx-module-cloudpinyin
+
+echo "Install linux tools end   ..."
 
