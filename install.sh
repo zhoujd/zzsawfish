@@ -13,7 +13,7 @@ case "$answer" in
         sudo apt-get install -y xscreensaver xscreensaver-gl-extra xscreensaver-data-extra
         sudo apt-get install -y unclutter feh
         sudo apt-get install -y numlockx  imagemagick remmina geany gtkorphan gprename rcconf
-       #sudo apt-get install -y eog fbpanel gkrellm conky-all
+        #sudo apt-get install -y eog fbpanel gkrellm conky-all
 esac
 
 ##setup .sawfishrc
