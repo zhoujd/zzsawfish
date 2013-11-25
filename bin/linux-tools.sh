@@ -46,9 +46,9 @@ sudo apt-get install fcitx-module-cloudpinyin
 ##jet editor
 sudo apt-get install jed jed-extra
 
-##auto hide mouse when idle (default 5s)
+###auto hide mouse when idle
 ##system->preference->startup applications
-##add: unclutter -idle 5
+##add: unclutter -display :0.0 -idle 5
 sudo aptitude install unclutter
 
 
