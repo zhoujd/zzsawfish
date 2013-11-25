@@ -58,7 +58,7 @@ sudo apt-get install jed jed-extra
 ###auto hide mouse when idle
 ##system->preference->startup applications
 ##add: unclutter -display :0.0 -idle 5
-sudo aptitude install unclutter
+sudo apt-get install unclutter
 
 ###power manager
 sudo add-apt-repository ppa:webupd8team/jupiter

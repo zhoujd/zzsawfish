@@ -48,13 +48,14 @@
    '("gnome-settings-daemon")                                ;;for ubuntu 11.04 use gtk
    '("gnome-power-manager")
    
-   '("gnome-keyring-daemon --start --components=pkcs11")
-   '("gnome-keyring-daemon --start --components=secrets")
-   '("gnome-keyring-daemon --start --components=ssh")
+   '("gnome-keyring-daemon" "--start" "--components=pkcs11")
+   '("gnome-keyring-daemon" "--start" "--components=secrets")
+   '("gnome-keyring-daemon" "--start" "--components=ssh")
    
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
    '("remmina" "-i")
+   '("unclutter -display :0.0 -idle 5")
    ;;wallpaper setting
    (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
    ;;system info show
