@@ -1,8 +1,12 @@
 ;;; key-setting.jl begin here
 
+;;hide mouse menus
+(define hide-mouse-menu t)
+
 ;; Rootwindow Keybindings
 (bind-keys root-window-keymap
-           "Button3-Click" 'popup-root-menu)
+           "Button3-Click" (if hide-mouse-menu #f 'popup-root-menu)
+           "Button2-Click" (if hide-mouse-menu #f 'popup-root-menu))
 
 (bind-keys global-keymap "W-c" '(warp-to-center 0.5 0.5))
 
