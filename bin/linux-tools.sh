@@ -43,5 +43,9 @@ sudo apt-get install fcitx-googlepinyin
 sudo apt-get install fcitx-sunpinyin
 sudo apt-get install fcitx-module-cloudpinyin
 
+##jet editor
+sudo apt-get install jed jed-extra
+
+
 echo "Install linux tools end   ..."
 
