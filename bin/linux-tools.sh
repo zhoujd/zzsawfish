@@ -6,6 +6,15 @@ echo "Install linux tools begin ..."
 sudo apt-get remove totem totem-gstreamer totem-mozilla --force-yes  -y
 sudo apt-get remove rhythmbox evolution bittorrent empathy --force-yes  -y
 
+##using xscreensaver
+sudo apt-get remove gnome-screensaver
+sudo apt-get install xscreensaver xscreensaver-gl-extra xscreensaver-data-extra
+
+##restore using gnome-screensaver
+sudo apt-get remove xscreensaver xscreensaver-gl-extra xscreensaver-data-extra
+sudo rm /usr/bin/gnome-screensaver-command
+sudo apt-get install gnome-screensaver
+
 ##video player
 sudo apt-get install vlc
 
@@ -50,6 +59,13 @@ sudo apt-get install jed jed-extra
 ##system->preference->startup applications
 ##add: unclutter -display :0.0 -idle 5
 sudo aptitude install unclutter
+
+###power manager
+sudo add-apt-repository ppa:webupd8team/jupiter
+sudo apt-get update
+sudo apt-get install jupiter
+##if your lantop support "EeePC" you can install follow
+sudo apt-get install jupiter-support-eee
 
 
 echo "Install linux tools end   ..."
