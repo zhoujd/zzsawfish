@@ -51,6 +51,7 @@
    '("gnome-keyring-daemon" "--start" "--components=pkcs11")
    '("gnome-keyring-daemon" "--start" "--components=secrets")
    '("gnome-keyring-daemon" "--start" "--components=ssh")
+   '("gnome-keyring-daemon" "--start" "--components=gpg")
    
    '("ibus-daemon" "--xim")                                  ;;input method
    '("numlockx" "on")
