@@ -103,6 +103,9 @@
 (setq menu-program-stays-running t)
 (menu-start-process)
 
+;; All program fill screen (disallow emacs align int number)
+(setq ignore-program-positions t)
+
 (setq  root-menu
     `((,(_ "_Windows")    .  window-menu)
       (,(_ "Work_spaces") .  workspace-menu)

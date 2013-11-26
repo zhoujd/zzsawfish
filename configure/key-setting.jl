@@ -68,27 +68,27 @@
 (define menus-keymap (make-keymap))
 (bind-keys global-keymap "W-m" menus-keymap)
 (bind-keys menus-keymap
-           "1"           'popup-root-menu
-           "2"           'popup-window-menu
-           "3"           'popup-apps-menu)
+           "1"       'popup-root-menu
+           "2"       'popup-window-menu
+           "3"       'popup-apps-menu)
 
 ;; Workspace Keymacros
 (define ws-keymap (make-keymap))
 (bind-keys global-keymap "W-w" ws-keymap)
 (bind-keys ws-keymap
-           "Left"        'workspace-left
-           "Up"          'workspace-up
-           "Right"       'workspace-right
-           "Down"        'workspace-down)
+           "Left"    'workspace-left
+           "Up"      'workspace-up
+           "Right"   'workspace-right
+           "Down"    'workspace-down)
 
 ;; Viewport keymacros
 (define vp-keymap (make-keymap))
 (bind-keys global-keymap "W-v" vp-keymap)
 (bind-keys vp-keymap
-           "Left"        '(move-viewport -1  0)
-           "Up"          '(move-viewport  0 -1)
-           "Right"       '(move-viewport  1  0)
-           "Down"        '(move-viewport  0  1))
+           "Left"    '(move-viewport -1  0)
+           "Up"      '(move-viewport  0 -1)
+           "Right"   '(move-viewport  1  0)
+           "Down"    '(move-viewport  0  1))
 
 (bind-keys window-keymap
            "W--"         'iconify-window
