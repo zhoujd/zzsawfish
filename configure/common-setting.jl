@@ -31,8 +31,7 @@
 (custom-set-typed-variable (quote wm-modifier-value) (quote (super)) (quote modifier-list))
 
 ;;wallpaper setting
-(setq list-wallpaper '("black.png" "sand.jpg"   "grass.jpg"  "grid.jpg"
-                       "red.jpg"   "summer.jpg" "yellow.jpg" "moon.jpg"))
+(setq list-wallpaper '("black.png" "summer.jpg" "yellow.jpg"))
 
 ;;set start program
 (define startup-programs
@@ -58,7 +57,7 @@
    '("remmina" "-i")
    '("unclutter" "-display" ":0.0" "-idle" "5")
    ;;wallpaper setting
-   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 6 list-wallpaper)))
+   (list "feh" "--bg-fill" (concat zzsawfish-path "wallpaper/" (nth 2 list-wallpaper)))
    ;;system info show
    ;(list "conky" (format nil "-x %d" (- (screen-width) 170)) (format nil "-y %d" (- (screen-height) 600)))
    ))
