@@ -40,25 +40,29 @@
 (define exec-keymap (make-keymap))
 (bind-keys global-keymap "W-e" exec-keymap)
 (bind-keys exec-keymap
-           "e"    'jump-or-exec-emacs
-           "t"    '(system "gnome-terminal &")
-           "n"    '(system "nautilus --no-desktop ~ &")
-           "f"    '(jump-or-exec "Firefox" "firefox" #:match-class t)
-           "b"    '(jump-or-exec "Beyond Compare" "bcompare")
-           "C-b"  '(system "bcompare &")
-           "g"    '(jump-or-exec "Geany" "geany" t)
-           "G"    '(jump-or-exec "GPRename" "gprename" nil)
-           "r"    '(jump-or-exec "Remmina" "remmina")
-           "m"    '(system "gnome-system-monitor &")
-           "s"    '(system "gnome-control-center &")
-           "C-e"  '(system "evince &")
+           "e"       'jump-or-exec-emacs
+           "t"       '(system "gnome-terminal &")
+           "n"       '(system "nautilus --no-desktop ~ &")
+           "f"       '(jump-or-exec "Firefox" "firefox" #:match-class t)
+           "b"       '(jump-or-exec "Beyond Compare" "bcompare")
+           "C-b"     '(system "bcompare &")
+           "g"       '(jump-or-exec "Geany" "geany" t)
+           "G"       '(jump-or-exec "GPRename" "gprename" nil)
+           "r"       '(jump-or-exec "Remmina" "remmina")
+           "m"       '(system "gnome-system-monitor &")
+           "s"       '(system "gnome-control-center &")
+           "C-e"     '(system "evince &")
+
+           "Print"   'capture-root-window)
+           "M-Print" 'capture-this-window)
+           "C-Print" 'capture-region)
            
-           "F2"   '(system "gksu &")
-           "C-F2" 'run-application
-           "F9"   '(jump-or-exec "Synaptic" "gksu -u root synaptic" nil)
-           "F10"  '(jump-or-exec "Gtkorphan" "gksu -u root gtkorphan" t)
-           "F11"  '(system "gksu -u root /etc/init.d/network-manager restart &")
-           "F12"  '(system "gksu -u root /etc/init.d/privoxy restart &"))
+           "F2"      '(system "gksu &")
+           "C-F2"    'run-application
+           "F9"      '(jump-or-exec "Synaptic" "gksu -u root synaptic" nil)
+           "F10"     '(jump-or-exec "Gtkorphan" "gksu -u root gtkorphan" t)
+           "F11"     '(system "gksu -u root /etc/init.d/network-manager restart &")
+           "F12"     '(system "gksu -u root /etc/init.d/privoxy restart &"))
 
 ;;for menus control
 (define menus-keymap (make-keymap))
