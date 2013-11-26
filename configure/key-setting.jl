@@ -1,12 +1,28 @@
 ;;; key-setting.jl begin here
 
 ;;hide mouse menus
-(define hide-mouse-menu t)
+(defvar hide-mouse-menu t "lock/unlock mouse2/3 click")
 
 ;; Rootwindow Keybindings
 (bind-keys root-window-keymap
            "Button3-Click" (if hide-mouse-menu #f 'popup-root-menu)
            "Button2-Click" (if hide-mouse-menu #f 'popup-root-menu))
+
+;; Lock/Unlock mouse 2/3 click
+(defun lock/unlock-mouse-click ()
+  (interactive)
+  (setq hide-mouse-menu (not hide-mouse-menu))
+  (if hide-mouse-menu
+      (progn
+        (display-message-with-timeout "+lock click on root window+")
+        (bind-keys root-window-keymap
+                   "Button3-Click" #f
+                   "Button2-Click" #f))
+      (progn
+        (display-message-with-timeout "-unlock click on root window-")
+        (bind-keys root-window-keymap
+                   "Button3-Click" 'popup-root-menu
+                   "Button2-Click" 'popup-root-menu))))
 
 (bind-keys global-keymap "W-c" '(warp-to-center 0.5 0.5))
 
@@ -27,6 +43,8 @@
 
            "W-F9"    '(system (program-term "sawfish-client"))
            "W-F10"   'open/close-gnome-panel
+           "W-F11"   'lock/unlock-mouse-click
+           "W-F12"   '(popup-menu system-menu)
 
            "W-Print" 'capture-root-window
            "M-Print" 'capture-this-window

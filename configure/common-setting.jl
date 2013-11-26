@@ -106,7 +106,11 @@
 ;; All program fill screen (disallow emacs align int number)
 (setq ignore-program-positions t)
 
-(setq  root-menu
+(setq system-menu
+  '(("reboot"   (system "gksudo reboot"))
+    ("shutdown" (system "gksudo exec 'shutdown -h now'"))))
+
+(setq root-menu
     `((,(_ "_Windows")    .  window-menu)
       (,(_ "Work_spaces") .  workspace-menu)
       (,(_ "_Programs")   .  apps-menu)

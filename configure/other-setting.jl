@@ -116,11 +116,11 @@
       (progn
         (system "kill -KILL `pidof gnome-panel` &")
         )
-    (progn
-      (system "gnome-panel &")
-      (system "bluetooth-applet &")
-      (system "nm-applet &")
-      ))
+      (progn
+        (system "gnome-panel &")
+        (system "bluetooth-applet &")
+        (system "nm-applet &")
+        ))
   (setq gnome-panel-open-flag (not gnome-panel-open-flag)))
 
 (provide 'other-setting)
