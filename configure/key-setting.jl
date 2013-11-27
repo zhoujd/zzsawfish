@@ -11,18 +11,7 @@
 ;; Lock/Unlock mouse 2/3 click
 (defun lock/unlock-mouse-click ()
   (interactive)
-  (setq hide-mouse-menu (not hide-mouse-menu))
-  (if hide-mouse-menu
-      (progn
-        (display-message-with-timeout "+lock click on root window+")
-        (bind-keys root-window-keymap
-                   "Button3-Click" #f
-                   "Button2-Click" #f))
-      (progn
-        (display-message-with-timeout "-unlock click on root window-")
-        (bind-keys root-window-keymap
-                   "Button3-Click" 'popup-root-menu
-                   "Button2-Click" 'popup-root-menu))))
+  (setq hide-mouse-menu (not hide-mouse-menu)))
 
 (bind-keys global-keymap "W-c" '(warp-to-center 0.5 0.5))
 
