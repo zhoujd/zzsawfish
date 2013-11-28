@@ -1,17 +1,9 @@
 ;;; key-setting.jl begin here
 
-;;hide mouse menus
-(defvar hide-mouse-menu t "lock/unlock mouse2/3 click")
-
 ;; Rootwindow Keybindings
 (bind-keys root-window-keymap
-           "Button3-Click" (if hide-mouse-menu #f 'popup-root-menu)
-           "Button2-Click" (if hide-mouse-menu #f 'popup-root-menu))
-
-;; Lock/Unlock mouse 2/3 click
-(defun lock/unlock-mouse-click ()
-  (interactive)
-  (setq hide-mouse-menu (not hide-mouse-menu)))
+           "Button3-Click" 'mouse-popup-root-menu
+           "Button2-Click" 'mouse-popup-root-menu)
 
 (bind-keys global-keymap "W-c" '(warp-to-center 0.5 0.5))
 

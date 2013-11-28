@@ -123,5 +123,18 @@
         ))
   (setq gnome-panel-open-flag (not gnome-panel-open-flag)))
 
+;; Hide mouse menus
+(defvar hide-mouse-menu t "lock/unlock mouse2/3 click")
+(defun mouse-popup-root-menu ()
+  (interactive)
+  (unless hide-mouse-menu
+    (popup-root-menu)))
+
+;; Lock/Unlock mouse 2/3 click
+(defun lock/unlock-mouse-click ()
+  (interactive)
+  (setq hide-mouse-menu (not hide-mouse-menu)))
+
+
 (provide 'other-setting)
 ;;; other-setting.jl end here
