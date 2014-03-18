@@ -107,8 +107,8 @@
 (setq ignore-program-positions t)
 
 (setq system-menu
-  '(("reboot"   (system "gksudo reboot"))
-    ("shutdown" (system "gksudo exec 'shutdown -h now'"))))
+  '(("_Reboot"   (system "gksudo reboot"))
+    ("_Shutdown" (system "gksudo exec 'shutdown -h now'"))))
 
 (setq root-menu
     `((,(_ "_Windows")    .  window-menu)
