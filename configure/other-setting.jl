@@ -115,6 +115,7 @@
   (if gnome-panel-open-flag
       (progn
         (system "kill -KILL `pidof gnome-panel` &")
+        (system "kill -KILL `pidof nm-applet` &")
         )
       (progn
         (system "gnome-panel &")
