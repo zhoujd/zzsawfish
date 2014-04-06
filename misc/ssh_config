@@ -17,9 +17,11 @@
 # ssh_config(5) man page.
 
 Host *
+### zhoujd x11 begin
 ForwardAgent yes
 ForwardX11 yes
 ForwardX11Trusted yes
+### zhoujd x11 end
 
 #   ForwardAgent no
 #   ForwardX11 no

@@ -60,6 +60,7 @@ ChallengeResponseAuthentication no
 #GSSAPIAuthentication no
 #GSSAPICleanupCredentials yes
 
+### zhoujd x11 forward yes
 X11Forwarding yes
 X11DisplayOffset 10
 PrintMotd no
