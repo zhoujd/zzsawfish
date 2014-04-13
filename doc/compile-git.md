@@ -1,6 +1,7 @@
 Compile sawfish with Git
 =======
 
+<http://sawfish.wikia.com/wiki/Compilation_from_GIT>
 
 Here the basic installation of Sawfish from GIT in a Debian GNU/Linux Squeeze/Wheezy hybrid from an initial Debian GNU/Linux 6.0.1a installation without a desktop is described.
 
