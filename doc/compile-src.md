@@ -14,7 +14,7 @@ Open a terminal-emulator and create a directory for the Sawfish source files:
     :~$ cd $HOME
     :~$ mkdir build
  
-Go into the build directory and Download the source files for the build: 
+Go into the build directory and [Download]<http://sawfish.wikia.com/wiki/Download> the source files for the build: 
 
     :~$ cd build
     :~/build$ wget http://download.tuxfamily.org/librep/librep-0.92.0.tar.bz2
@@ -32,10 +32,11 @@ Extract the code from the .tar.bz2 (alternatively you can grab .tar.xz files) fi
 For GNU/Tar atleast `tar xf file.tar.bz2' is enough. 
 
 There are dependencies for Sawfish 1.8.1 that must be installed prior to building the Sawfish window manager.
-■ gtk+ >= 2.12 
-■ pango (optional, but recommended for UTF-8 support) 
-■ gdk-pixbuf-xlib OR imlib1 (imlib2 is currently not supported) 
-■ GNU autotools to compile. 
+
+* gtk+ >= 2.12 
+* pango (optional, but recommended for UTF-8 support) 
+* gdk-pixbuf-xlib OR imlib1 (imlib2 is currently not supported) 
+* GNU autotools to compile. 
 
 First become root (the system administrator, also: super user). (From now on, distinguish by the prompt-sign if it's necessary to be root). Depending on your setup, you might want to use `sudo' instead of `su'.
 
