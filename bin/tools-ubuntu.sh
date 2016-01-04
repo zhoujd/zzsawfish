@@ -8,10 +8,11 @@ sudo apt-get remove rhythmbox evolution bittorrent empathy --force-yes  -y
 
 ##using xscreensaver
 sudo apt-get remove gnome-screensaver
-sudo apt-get install xscreensaver xscreensaver-gl-extra xscreensaver-data-extra
+sudo apt-get install xscreensaver unicode-screensaver xscreensaver-gl-extra rss-glx xscreensaver-data-extra
+sudo apt-get install 
 
 ##restore using gnome-screensaver
-sudo apt-get remove xscreensaver xscreensaver-gl-extra xscreensaver-data-extra
+sudo apt-get remove xscreensaver unicode-screensaver xscreensaver-gl-extra rss-glx xscreensaver-data-extra
 sudo rm /usr/bin/gnome-screensaver-command
 sudo apt-get install gnome-screensaver
 
